@@ -9,3 +9,11 @@ commands to start:
 3. npx tailwindcss init
 
 4. npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion
+
+5. npm install react-router-dom
+
+-----------------------------------------------
+if tailwindcss is not working for vite use these commands:
+
+6. npm install --legacy-peer-deps -D tailwindcss postcss autoprefixer
+7. npx tailwind init -p
