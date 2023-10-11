@@ -2,10 +2,10 @@
 
 commands to start:
 
-npm create vite@latest ./ --template react √ Current directory is not empty. Remove existing files and continue? ... yes √ Select a framework: » React √ Select a variant: » JavaScript + SWC
+1. npm create vite@latest ./ --template react √ Current directory is not empty. Remove existing files and continue? ... yes √ Select a framework: » React √ Select a variant: » JavaScript + SWC
 
-npm install -D tailwindcss
+2. npm install -D tailwindcss
 
-npx tailwindcss init
+3. npx tailwindcss init
 
-npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion
+4. npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion
