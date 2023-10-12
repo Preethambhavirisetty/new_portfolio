@@ -6,6 +6,7 @@ import {navLinks} from '../constants';
 
 
 const Navbar = () => {
+  const [active, setActive] = useState(' ')
   return (
     <nav className = {`${styles.paddindx} w-full flex items-center
     py-5 fixed top-0 z-20 bg-primary`}>
@@ -21,6 +22,25 @@ const Navbar = () => {
           <p className ='text-white text-[18px]
           font-bold cursor-pointer'>Krishna Preetham Bhavirisetty</p>
         </Link>
+
+        <ul className ="list-none hidden sm:flex flex-row gap-10">
+          {navLinks.map((Link,idx) => (
+            <li key = {Link.id}
+            className={`${
+              active === Link.title
+              ? "text-white"
+              : "text-secondary"
+            }`}
+            
+            >
+              <a href={`#${Link.id}`}>{Link.title}</a>
+            </li>
+          ))}
+
+        </ul>
+
+
+
       </div>
 
     </nav>
