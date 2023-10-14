@@ -17,3 +17,8 @@ if tailwindcss is not working for vite use these commands:
 
 6. npm install --legacy-peer-deps -D tailwindcss postcss autoprefixer
 7. npx tailwind init -p
+
+When you import framer-motion it will prompt you saying new dependencies optimized.
+
+
+8. npm install --legacy-peer-deps three 

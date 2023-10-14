@@ -32,7 +32,7 @@ const Navbar = () => {
               ? "text-white"
               : "text-secondary"
             }
-            hover:text-white text-[18px] font-medium cursor-pointer
+            hover:text-[#d7ff5e] text-[18px] font-medium cursor-pointer
             `}
             onClick={() => setActive(Link.title)}
             
