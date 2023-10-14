@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
-import {logonew, menu, close} from '../assets';
+import {logonav, menu, close} from '../assets';
 import {styles} from '../styles';
 import {navLinks} from '../constants';
 
@@ -19,7 +19,7 @@ const Navbar = () => {
           setActive("");
           window.scrollTo(0, 0)
         }}>
-          <img src={logonew} alt="logonew" className='w-9 h-9 object-contain' />
+          <img src={logonav} alt="logonav" className='w-9 h-9 object-contain' />
           <p className ='text-white text-[18px]
           font-bold cursor-pointer '>Krishna Preetham Bhavirisetty</p>
         </Link>
