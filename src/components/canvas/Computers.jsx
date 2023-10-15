@@ -12,7 +12,7 @@ const Computers = () => {
 
   return(
     <mesh>
-      <hemisphereLight intensity={2.0} 
+      <hemisphereLight intensity={2.5} 
       groundColor="black"/>
       <pointLight intensity = {1} />
       <spotLight
