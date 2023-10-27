@@ -1,6 +1,9 @@
 import logonav from "./logonav.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
+import code from "./code.png";
+import python from "./python.png";
+import react from "./react.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
@@ -20,20 +23,28 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import mysql from "./tech/mysql.png";
+import python1 from "./tech/python1.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+// import meta from "./company/meta.png";
+// import shopify from "./company/shopify.png";
+// import starbucks from "./company/starbucks.png";
+// import tesla from "./company/tesla.png";
+import edu from "./company/edu.png";
+import id from "./company/id.png";
+import portfo from "./portfo.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import vote from "./vote.jpg";
+
+import todo from "./todo.png";
 
 export {
   logonav,
   backend,
   creator,
+  code,
+  python,
+  react,
   mobile,
   web,
   github,
@@ -52,11 +63,17 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
+  mysql,
+  python1,
+  // meta,
+  // shopify,
+  // starbucks,
+  // tesla,
+  edu,
+  id,
+  portfo,
+  
+  vote,
+  
+  todo,
 };
