@@ -11,6 +11,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { Krishna_Preetham_Bhavirisetty } from "../assets";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -59,13 +60,17 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div className="w-full" variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
           Work Experience.
         </h2>
+        <div className="flex items-center justify-center w-full">
+          <a className = "w-40 flex items-center justify-center rounded-full border-l-4 border-r-4 border-[#facc15]" href={ Krishna_Preetham_Bhavirisetty } download>Download CV</a>
+        </div>
+        
       </motion.div>
 
       <div className='mt-20 flex flex-col'>

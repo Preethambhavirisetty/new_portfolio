@@ -26,6 +26,8 @@ import threejs from "./tech/threejs.svg";
 import mysql from "./tech/mysql.png";
 import python1 from "./tech/python1.png";
 
+import Krishna_Preetham_Bhavirisetty from "./Krishna_Preetham_Bhavirisetty.pdf";
+
 // import meta from "./company/meta.png";
 // import shopify from "./company/shopify.png";
 // import starbucks from "./company/starbucks.png";
@@ -73,6 +75,8 @@ export {
   id,
   portfo,
   
+  Krishna_Preetham_Bhavirisetty,
+
   vote,
   
   todo,
