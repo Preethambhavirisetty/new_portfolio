@@ -1,6 +1,9 @@
 import logonav from "./logonav.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
+import dataanalysis from "./dataanalysis.png";
+import dataengineer from "./dataengineer.png";
+import cloud from "./cloudcomputing.png";
 import code from "./code.png";
 import python from "./python.png";
 import react from "./react.png";
@@ -44,6 +47,9 @@ export {
   logonav,
   backend,
   creator,
+  dataanalysis,
+  dataengineer,
+  cloud,
   code,
   python,
   react,

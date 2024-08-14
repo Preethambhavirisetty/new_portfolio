@@ -68,7 +68,7 @@ const Experience = () => {
           Work Experience.
         </h2>
         <div className="flex items-center justify-center w-full">
-          <a className = "w-40 flex items-center justify-center rounded-full border-l-4 border-r-4 border-[#facc15]" href={ Krishna_Preetham_Bhavirisetty } download>Download CV</a>
+          <a className = "text-white-100 w-40 flex items-center justify-center rounded-full border-l-4 border-r-4 border-[#facc15]" href={ Krishna_Preetham_Bhavirisetty } download>Download CV</a>
         </div>
         
       </motion.div>

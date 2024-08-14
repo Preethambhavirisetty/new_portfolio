@@ -47,10 +47,12 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-white text-[17px] max-w-3xl leading-[30px]'
       >
-        Coding is more than a profession to me; it's a craft I've honed with dedication.
-         With a deep-rooted interest in software and web development, I bring ideas to life digitally.
-         Being a natural team player, I believe in amplifying strengths through collaboration. 
-         Together, we don't just solve problems; we innovate.!
+        "Code flows through me – a language to reshape reality. 
+        Data is my intellectual playground, the cloud my digital canvas. 
+        I ignite innovation by transforming raw data into actionable insights, 
+        and architecting scalable solutions on the cloud. As a collaborative powerhouse, 
+        I thrive on amplifying strengths to unlock groundbreaking possibilities. 
+        Together, let's not just solve problems, let's revolutionize the game!"
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

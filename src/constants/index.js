@@ -1,3 +1,4 @@
+import { Cloud } from "@react-three/drei";
 import {
   mobile,
   backend,
@@ -31,6 +32,9 @@ import {
   
   todo,
   threejs,
+  dataengineer,
+  dataanalysis,
+  cloud,
 } from "../assets";
 
 export const navLinks = [
@@ -51,16 +55,16 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
-    icon: code,
+    title: "Data Analysis",
+    icon: dataanalysis,
   },
   {
-    title: "React Developer",
-    icon: react,
+    title: "Data Engineer",
+    icon: dataengineer,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "Cloud Engineer",
+    icon: cloud,
   },
   {
     title: "Python Developer",
@@ -133,10 +137,10 @@ const experiences = [
   },
   {
     title: "Data Analyst intern",
-    company_name: "Avanish Solutions",
+    company_name: "Avanish Solutions, Hyderabad, India",
     icon: id,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jan 2021 - April 2021",
     points: [
       "Established a seamless process for regular data export, import, and backup.",
       "Conducted an in-depth analysis of database systems, optimising the efficiency of integration and tested database servers.",
@@ -145,11 +149,11 @@ const experiences = [
     ],
   },
   {
-    title: "Back-End Developer intern",
-    company_name: "Saadrusso Technologies Private Limited",
+    title: "Back-End Developer",
+    company_name: "Saadrusso Technologies Private Limited, Hyderabad, India",
     icon: id,
     iconBg: "#383E56",
-    date: "Jan 2022 - May 2022",
+    date: "May 2021 - June 2022",
     points: [
       "Implemented various APIs and business logic for Event Core, our flagship digital memory book product.",
       "Integrated the back-end through Go lang, ensuring a cohesive and efficient system.", 

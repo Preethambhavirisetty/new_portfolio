@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import  Animations  from "./canvas/Animations";
+
 
 const Hero = () => {
   return (
@@ -19,13 +21,16 @@ const Hero = () => {
             Hi, I'm <span className='text-[#facc15]'>Preetham</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-          "I am passionate about web development and logical thinking,   <br className='sm:block hidden' />
-          and I thrive both as an individual and in collaborative group settings ."
+          "I analyze data, architect cloud systems, <br className='sm:block hidden' />
+          and thrive in team environments – let's build the next big thing."  
+             
+          
           </p>
         </div>
       </div>
+      <Animations/>
 
-      <ComputersCanvas />
+      {/* <ComputersCanvas /> */}
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
