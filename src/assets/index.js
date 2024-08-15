@@ -28,8 +28,9 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import mysql from "./tech/mysql.png";
 import python1 from "./tech/python1.png";
+import tableau from "./tech/tableau.svg";
 
-import Krishna_Preetham_Bhavirisetty from "./Krishna_Preetham_Bhavirisetty.pdf";
+import Preetham_Bhavirisetty from "./Preetham_Bhavirisetty.pdf";
 
 // import meta from "./company/meta.png";
 // import shopify from "./company/shopify.png";
@@ -37,9 +38,9 @@ import Krishna_Preetham_Bhavirisetty from "./Krishna_Preetham_Bhavirisetty.pdf";
 // import tesla from "./company/tesla.png";
 import edu from "./company/edu.png";
 import id from "./company/id.png";
-import portfo from "./portfo.png";
+import portss from "./portss.png";
 
-import vote from "./vote.jpg";
+import dashboard from "./dashboard.png";
 
 import todo from "./todo.png";
 
@@ -79,11 +80,11 @@ export {
   // tesla,
   edu,
   id,
-  portfo,
-  
-  Krishna_Preetham_Bhavirisetty,
+  portss,
+  tableau,
+  Preetham_Bhavirisetty,
 
-  vote,
+  dashboard,
   
   todo,
 };

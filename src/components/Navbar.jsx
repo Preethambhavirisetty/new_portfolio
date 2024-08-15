@@ -45,7 +45,7 @@ const Navbar = () => {
           <img src={logonav} alt='logonav' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Bhavirisetty &nbsp;
-            <span className='sm:block hidden'> | Krishna Preetham</span>
+            <span className='sm:block hidden'> |  Preetham</span>
           </p>
         </Link>
 

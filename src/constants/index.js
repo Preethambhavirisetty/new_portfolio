@@ -27,9 +27,9 @@ import {
   // shopify,
   edu,
   id,
-  portfo,
-  vote,
-  
+  portss,
+  dashboard,
+  tableau,
   todo,
   threejs,
   dataengineer,
@@ -55,7 +55,7 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Data Analysis",
+    title: "Data Analyst",
     icon: dataanalysis,
   },
   {
@@ -67,7 +67,7 @@ const services = [
     icon: cloud,
   },
   {
-    title: "Python Developer",
+    title: "Software Developer",
     icon: python,
   },
 ];                
@@ -119,6 +119,10 @@ const technologies = [
     name: "Python1",
     icon: python1,
   },
+  {
+    name: "tableau",
+    icon: tableau,
+  },
  
 ];
 
@@ -136,11 +140,11 @@ const experiences = [
     ],
   },
   {
-    title: "Data Analyst intern",
+    title: "Associate Software Developer",
     company_name: "Avanish Solutions, Hyderabad, India",
     icon: id,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - April 2021",
+    date: "January 2021 - April 2021",
     points: [
       "Established a seamless process for regular data export, import, and backup.",
       "Conducted an in-depth analysis of database systems, optimising the efficiency of integration and tested database servers.",
@@ -149,11 +153,11 @@ const experiences = [
     ],
   },
   {
-    title: "Back-End Developer",
+    title: "Software Developer",
     company_name: "Saadrusso Technologies Private Limited, Hyderabad, India",
     icon: id,
     iconBg: "#383E56",
-    date: "May 2021 - June 2022",
+    date: "May 2021 - July 2022",
     points: [
       "Implemented various APIs and business logic for Event Core, our flagship digital memory book product.",
       "Integrated the back-end through Go lang, ensuring a cohesive and efficient system.", 
@@ -165,7 +169,7 @@ const experiences = [
     company_name: "Binghamton univeristy",
     icon: edu,
     iconBg: "#E6DEDD",
-    date: "Aug 2023 - Present",
+    date: "Aug 2022 - Present",
     points: [
       "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS." ,
       "completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
@@ -204,14 +208,14 @@ const projects = [
   {
     name: "Portfolio",
     description:
-      "Designed and developed an interactive portfolio leveraging React, showcasing real-time 3D graphics using Three.js. Implemented responsive UI/UX design techniques utilizing Tailwind CSS, enhancing user engagement across devices. Integrated advanced animations and effects with Three.js to create a unique, dynamic online presence for showcasing my work.",
+      "Designed and developed an interactive portfolio leveraging React, showcasing real-time 3D graphics using D3.js. Implemented responsive UI/UX design techniques utilizing Tailwind CSS, enhancing user engagement across devices. Integrated advanced animations and effects with D3.js to create a unique, dynamic online presence for showcasing my work.",
     tags: [
       {
-        name: "react",
+        name: "reactjs",
         color: "blue-text-gradient",
       },
       {
-        name: "Threejs",
+        name: "D3js",
         color: "green-text-gradient",
       },
       {
@@ -219,36 +223,36 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image:   portfo,
+    image:   portss,
     source_code_link: "https://github.com/Preethambhavirisetty/new_portfolio.git",
   },
   {
-    name: "online voting system",
+    name: "Market Sales Analysis",
     description:
-      "Engineered a secure online voting system using Django, enabling users to cast votes remotely from the comfort of their homes. Implemented a dual-interface design, with user-facing features to view participants and cast votes, and an admin dashboard for comprehensive management and oversight. Leveraged HTML and CSS to craft intuitive and responsive layouts",
+        "Analyzed sales data with Pandas, boosting forecast accuracy by 20% and reducing stockouts by 15%. Developed Tableau dashboards, improving data access by 30% and cutting retrieval time by 25%. Automated data processing with Pandas, cutting prep time by 40% and driving a 10% sales growth. Streamlined data workflows, enhancing efficiency and contributing to a 10% increase in overall productivity",
     tags: [
       {
-        name: "Django",
+        name: "Pandas",
         color: "blue-text-gradient",
       },
       {
-        name: "HTML",
+        name: "Python",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Tableau",
         color: "pink-text-gradient",
       },
       {
-        name: "sqlite",
+        name: "Data Cleaning",
         color: "blue-text-gradient",
       },
     ], 
-    image: vote,
-    source_code_link: "https://github.com/Preethambhavirisetty/Online_majoritarian.git",
+    image: dashboard,
+    source_code_link: "https://public.tableau.com/app/profile/krishna.preetham.bhavirisetty/viz/MarketSales2016-2019/Dashboard1",
   },
   {
-    name: "To-Do",
+    name: "Task Management",
     description:
       "Engineered a To-Do list application using Vue.js, emphasizing real-time responsiveness and a user-friendly interface.Integrated the frontend with a robust Django RESTful API, facilitating  task management operations.Implemented features like task addition, monitoring, and removal, enhancing user productivity and providing a streamlined task-tracking experience.",
     tags: [

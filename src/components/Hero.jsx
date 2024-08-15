@@ -21,8 +21,8 @@ const Hero = () => {
             Hi, I'm <span className='text-[#facc15]'>Preetham</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-          "I analyze data, architect cloud systems, <br className='sm:block hidden' />
-          and thrive in team environments – let's build the next big thing."  
+          "I love designing software, managing projects,  <br className='sm:block hidden' />
+          and always bring my passion to whatever I'm working on. – let's build the next big thing."  
              
           
           </p>
