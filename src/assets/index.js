@@ -30,7 +30,7 @@ import mysql from "./tech/mysql.png";
 import python1 from "./tech/python1.png";
 import tableau from "./tech/tableau.svg";
 
-import Preetham_Bhavirisetty from "./Preetham_Bhavirisetty.pdf";
+import PreethamBhavirisetty from "./PreethamBhavirisetty.pdf";
 
 // import meta from "./company/meta.png";
 // import shopify from "./company/shopify.png";
@@ -82,7 +82,7 @@ export {
   id,
   portss,
   tableau,
-  Preetham_Bhavirisetty,
+  PreethamBhavirisetty,
 
   dashboard,
   

@@ -55,7 +55,11 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Data Analyst",
+    title: "Python Developer",
+    icon: python,
+  },
+  {
+    title: "Site Reliability Engineer",
     icon: dataanalysis,
   },
   {
@@ -66,10 +70,7 @@ const services = [
     title: "Cloud Engineer",
     icon: cloud,
   },
-  {
-    title: "Software Developer",
-    icon: python,
-  },
+  
 ];                
 
 const technologies = [
@@ -128,7 +129,7 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Bachlor's",
+    title: "Bachelor of science in Information Technology",
     company_name: "VR Siddartha Engineering College",
     icon: edu,
     iconBg: "#383E56",
@@ -141,31 +142,36 @@ const experiences = [
   },
   {
     title: "Associate Software Developer",
-    company_name: "Avanish Solutions, Hyderabad, India",
+    company_name: "Optum, Hyderabad, India",
     icon: id,
     iconBg: "#E6DEDD",
     date: "January 2021 - April 2021",
     points: [
-      "Established a seamless process for regular data export, import, and backup.",
-      "Conducted an in-depth analysis of database systems, optimising the efficiency of integration and tested database servers.",
-      "Implemented trend analysis and statistical monitoring to identify valuable insights from the data."
+      "Optimized and implemented automated solutions using Python and Shell scripts, resulting in a significant reduction in manual processes and improving operational efficiency across multiple teams.",
+"Designed and deployed interactive dashboards in Tableau, leveraging data visualization to enhance decision-making and increase report generation speed.",
+"Contributed to a 30% increase in overall operational efficiency and a 20% improvement in data accessibility for stakeholders.",
+"Utilized Vue.js for front-end development of web applications, enhancing user experience and achieving greater user engagement."
+
 ,
     ],
   },
   {
-    title: "Software Developer",
-    company_name: "Saadrusso Technologies Private Limited, Hyderabad, India",
+    title: "Python Developer",
+    company_name: "Accenture, Hyderabad, India",
     icon: id,
     iconBg: "#383E56",
     date: "May 2021 - July 2022",
     points: [
-      "Implemented various APIs and business logic for Event Core, our flagship digital memory book product.",
-      "Integrated the back-end through Go lang, ensuring a cohesive and efficient system.", 
-      "Generate a plugin to display all photos and posts made in event and moment. Using that plugin we can display all posts and stories in our WordPress site.",
+      "Collaborated and maintained web applications using Python and Flask, successfully migrating from Python 2.7 to 3.10, improving code efficiency and maintainability.",
+"Utilized React.js to enhance user interfaces, collaborating with cross-functional teams to deliver responsive and user-friendly applications.",
+"Managed version control and collaboration using Git in a Linux environment, streamlining development processes and improving team productivity.",
+"Achieved a 30% increase in overall application performance through these enhancements."
+
+
     ],
   },
   {
-    title: "Master's",
+    title: "Master of science in Computer Science",
     company_name: "Binghamton univeristy",
     icon: edu,
     iconBg: "#E6DEDD",
@@ -173,6 +179,21 @@ const experiences = [
     points: [
       "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS." ,
       "completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
+    ],
+  },
+  {
+    title: "Site Reliability Engineer / Python",
+    company_name: "ExxonMobil, Edison, NJ",
+    icon: id,
+    iconBg: "#E6DEDD",
+    date: "May 2023 - Present",
+    points: [
+      "Developed and deployed scalable web applications using Python and Django REST Framework, enhancing user experience through optimized React.js front-end integration.",
+"Implemented automated deployment processes with Docker and Jenkins, streamlining CI/CD pipelines and reducing deployment time by 40%, which resulted in a 25% decrease in downtime and increased deployment frequency.",
+"Utilized AWS services to enhance system reliability and scalability while ensuring system uptime through effective monitoring with Prometheus and Grafana.",
+"Leveraged Tableau and Python for data visualization and analysis, improving data-driven decision-making efficiency and reducing data processing time."
+
+
     ],
   },
 ];

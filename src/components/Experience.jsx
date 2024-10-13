@@ -11,7 +11,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import { Preetham_Bhavirisetty } from "../assets";
+import { PreethamBhavirisetty } from "../assets";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -68,7 +68,7 @@ const Experience = () => {
           Work Experience.
         </h2>
         <div className="flex items-center justify-center w-full">
-          <a className = "text-white-100 w-40 flex items-center justify-center rounded-full border-l-4 border-r-4 border-[#facc15]" href={ Preetham_Bhavirisetty } download>Download CV</a>
+          <a className = "text-white-100 w-40 flex items-center justify-center rounded-full border-l-4 border-r-4 border-[#facc15]" href={ PreethamBhavirisetty } download>Download CV</a>
         </div>
         
       </motion.div>
