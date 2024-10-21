@@ -182,10 +182,10 @@ const experiences = [
     ],
   },
   {
-    title: "Site Reliability Engineer / Python",
-    company_name: "ExxonMobil, Edison, NJ",
+    title: "Spftware Engineer / Python",
+    company_name: "IBM, Edison, NJ",
     icon: id,
-    iconBg: "#E6DEDD",
+    iconBg: "#383E56",
     date: "May 2023 - Present",
     points: [
       "Developed and deployed scalable web applications using Python and Django REST Framework, enhancing user experience through optimized React.js front-end integration.",

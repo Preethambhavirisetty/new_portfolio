@@ -11,15 +11,16 @@ const CanvasLoader = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        marginTop: "90px", // Adjust this value to move the loader down
       }}
     >
-      <span className='canvas-loader'></span>
+      <span className='canvas-loader' style={{ marginTop: "20px" }}></span> {/* Add margin to the loader itself */}
       <p
         style={{
           fontSize: 14,
           color: "#F1F1F1",
           fontWeight: 800,
-          marginTop: 40,
+          marginTop: 10, // Adjust this value for spacing between loader and progress text
         }}
       >
         {progress.toFixed(2)}%
