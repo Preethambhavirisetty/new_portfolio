@@ -182,7 +182,7 @@ const experiences = [
     ],
   },
   {
-    title: "Spftware Engineer / Python",
+    title: "Software Engineer / Python",
     company_name: "IBM, Edison, NJ",
     icon: id,
     iconBg: "#383E56",
