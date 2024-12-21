@@ -5,7 +5,8 @@ import dataanalysis from "./dataanalysis.png";
 import dataengineer from "./dataengineer.png";
 import cloud from "./cloudcomputing.png";
 import code from "./code.png";
-import python from "./python.png";
+import software from "./software.png";
+
 import react from "./react.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
@@ -28,6 +29,7 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import mysql from "./tech/mysql.png";
 import python1 from "./tech/python1.png";
+import aws from "./tech/aws.svg";
 import tableau from "./tech/tableau.svg";
 
 import PreethamBhavirisetty from "./PreethamBhavirisetty.pdf";
@@ -52,7 +54,7 @@ export {
   dataengineer,
   cloud,
   code,
-  python,
+  software,
   react,
   mobile,
   web,
@@ -74,6 +76,7 @@ export {
   threejs,
   mysql,
   python1,
+  aws,
   // meta,
   // shopify,
   // starbucks,

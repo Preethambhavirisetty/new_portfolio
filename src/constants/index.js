@@ -4,7 +4,7 @@ import {
   backend,
   creator,
   code,
-  python,
+  software,
   react,
   web,
   javascript,
@@ -21,6 +21,7 @@ import {
   docker,
   mysql,
   python1,
+  aws,
   // meta,
   // starbucks,
   // tesla,
@@ -34,7 +35,7 @@ import {
   threejs,
   dataengineer,
   dataanalysis,
-  cloud,
+  cloud
 } from "../assets";
 
 export const navLinks = [
@@ -55,20 +56,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Python Developer",
-    icon: python,
+    title: "Software Developer",
+    icon: software,
   },
   {
-    title: "Site Reliability Engineer",
+    title: "Solution Architect",
     icon: dataanalysis,
-  },
-  {
-    title: "Data Engineer",
-    icon: dataengineer,
   },
   {
     title: "Cloud Engineer",
     icon: cloud,
+  },
+  {
+    title: "Data Engineer",
+    icon: dataengineer,
   },
   
 ];                
@@ -121,6 +122,10 @@ const technologies = [
     icon: python1,
   },
   {
+    name: "aws",
+    icon: aws,
+  },
+  {
     name: "tableau",
     icon: tableau,
   },
@@ -135,37 +140,29 @@ const experiences = [
     iconBg: "#383E56",
     date: "June 2018 - April 2022",
     points: [
-      "In my bachelor's, I honed my coding skills in C and Python. And did couple of internships, fueling my passion for web and software development. ",
-      "My commitment extended beyond academics, as I volunteered for the National Service Scheme, a government organization. Additionally, as an active member of ACM. ", 
-      "I spearheaded events like coding competitions. This amalgamation of tech prowess and community service has enriched my multifaceted journey."
+      "In my bachelor's, I honed my coding skills in C and Python. And did couple of internships, fueling my passion for web and software development. My commitment extended beyond academics, as I volunteered for the National Service Scheme, a government organization. Additionally, as an active member of ACM. I spearheaded events like coding competitions. This amalgamation of tech prowess and community service has enriched my multifaceted journey."
     ],
   },
   {
-    title: "Associate Software Developer",
+    title: "Jr Software Developer",
     company_name: "Optum, Hyderabad, India",
     icon: id,
     iconBg: "#E6DEDD",
     date: "January 2021 - April 2021",
     points: [
-      "Optimized and implemented automated solutions using Python and Shell scripts, resulting in a significant reduction in manual processes and improving operational efficiency across multiple teams.",
-"Designed and deployed interactive dashboards in Tableau, leveraging data visualization to enhance decision-making and increase report generation speed.",
-"Contributed to a 30% increase in overall operational efficiency and a 20% improvement in data accessibility for stakeholders.",
-"Utilized Vue.js for front-end development of web applications, enhancing user experience and achieving greater user engagement."
+      "Designed and enhanced healthcare dashboards with React.js, Tailwind CSS, and Excel integration, improving reporting efficiency by 20%. Automated data validation in Python, reducing manual effort by 30%, and built RESTful APIs with Flask to handle 500+ daily patient data requests. Collaborated with DevOps to implement automated testing workflows, achieving 85% test coverage."
 
 ,
     ],
   },
   {
-    title: "Python Developer",
+    title: "Software Developer",
     company_name: "Accenture, Hyderabad, India",
     icon: id,
     iconBg: "#383E56",
     date: "May 2021 - July 2022",
     points: [
-      "Collaborated and maintained web applications using Python and Flask, successfully migrating from Python 2.7 to 3.10, improving code efficiency and maintainability.",
-"Utilized React.js to enhance user interfaces, collaborating with cross-functional teams to deliver responsive and user-friendly applications.",
-"Managed version control and collaboration using Git in a Linux environment, streamlining development processes and improving team productivity.",
-"Achieved a 30% increase in overall application performance through these enhancements."
+      "Scaled transaction monitoring system to handle $3M+ daily transactions. Enhanced fraud detection system using ML models improving detection accuracy by 35%, and architected event sourcing solution with Apache Kafka processing 1K+ TPS. Implemented comprehensive WebSocket alert system reducing incident response time by 45% Contributed to transaction monitoring system using React.js and Java Spring Boot, helping process $1M+ daily transactions. Assisted in implementing fraud detection features using AWS GuardDuty and developed real-time alert notifications reducing response time by 30%."
 
 
     ],
@@ -175,23 +172,19 @@ const experiences = [
     company_name: "Binghamton univeristy",
     icon: edu,
     iconBg: "#E6DEDD",
-    date: "Aug 2022 - Present",
+    date: "Aug 2022 - Dec 2024",
     points: [
-      "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS." ,
-      "completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
+      "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS. completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
     ],
   },
   {
-    title: "Software Engineer / Python",
-    company_name: "IBM, Edison, NJ",
+    title: "Software Development Engineer",
+    company_name: "Sodexo(IBM), Binghamton, NY",
     icon: id,
     iconBg: "#383E56",
-    date: "May 2023 - Present",
+    date: "Jan 2023 - Dec 2024",
     points: [
-      "Developed and deployed scalable web applications using Python and Django REST Framework, enhancing user experience through optimized React.js front-end integration.",
-"Implemented automated deployment processes with Docker and Jenkins, streamlining CI/CD pipelines and reducing deployment time by 40%, which resulted in a 25% decrease in downtime and increased deployment frequency.",
-"Utilized AWS services to enhance system reliability and scalability while ensuring system uptime through effective monitoring with Prometheus and Grafana.",
-"Leveraged Tableau and Python for data visualization and analysis, improving data-driven decision-making efficiency and reducing data processing time."
+      "Led development of high-performance microservices architecture using Java Spring Boot and React.js, processing 10K+ daily transactions through AWS cloud services. Implemented event-driven architecture with Kafka that reduced system latency by 25%, while maintaining 99.9% uptime and sub-200ms response times. Optimized system performance through custom caching and multi-region deployment, improving user satisfaction from 85% to 95%."
 
 
     ],
