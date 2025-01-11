@@ -179,7 +179,7 @@ const experiences = [
   },
   {
     title: "Software Development Engineer",
-    company_name: "Sodexo(IBM), Binghamton, NY",
+    company_name: "Sodexo, Binghamton, NY",
     icon: id,
     iconBg: "#383E56",
     date: "Jan 2023 - Dec 2024",

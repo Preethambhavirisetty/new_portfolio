@@ -1,4 +1,5 @@
 import logonav from "./logonav.png";
+import homeimage from "./homeimage.jpg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import dataanalysis from "./dataanalysis.png";
@@ -48,6 +49,7 @@ import todo from "./todo.png";
 
 export {
   logonav,
+  homeimage,
   backend,
   creator,
   dataanalysis,
@@ -86,7 +88,7 @@ export {
   portss,
   tableau,
   PreethamBhavirisetty,
-
+  
   dashboard,
   
   todo,
