@@ -1,5 +1,6 @@
-import logonav from "./logonav.png";
-import homeimage from "./homeimage.jpg";
+import logonav from "./logonav1.png";
+import bye from "./bye.gif";
+import homeimage from "./wavehi.gif";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import dataanalysis from "./dataanalysis.png";
@@ -42,6 +43,7 @@ import PreethamBhavirisetty from "./PreethamBhavirisetty.pdf";
 import edu from "./company/edu.png";
 import id from "./company/id.png";
 import portss from "./portss.png";
+import georoute from "./georoute.png";
 
 import dashboard from "./dashboard.png";
 
@@ -49,6 +51,7 @@ import todo from "./todo.png";
 
 export {
   logonav,
+  bye,
   homeimage,
   backend,
   creator,
@@ -86,6 +89,7 @@ export {
   edu,
   id,
   portss,
+  georoute,
   tableau,
   PreethamBhavirisetty,
   

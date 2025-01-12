@@ -35,7 +35,8 @@ import {
   threejs,
   dataengineer,
   dataanalysis,
-  cloud
+  cloud,
+  georoute
 } from "../assets";
 
 export const navLinks = [
@@ -132,25 +133,26 @@ const technologies = [
  
 ];
 
+
 const experiences = [
   {
     title: "Bachelor of science in Information Technology",
     company_name: "VR Siddartha Engineering College",
     icon: edu,
-    iconBg: "#383E56",
+    iconBg: "#facc15",
     date: "June 2018 - April 2022",
     points: [
-      "In my bachelor's, I honed my coding skills in C and Python. And did couple of internships, fueling my passion for web and software development. My commitment extended beyond academics, as I volunteered for the National Service Scheme, a government organization. Additionally, as an active member of ACM. I spearheaded events like coding competitions. This amalgamation of tech prowess and community service has enriched my multifaceted journey."
+      "During my bachelor's, I developed strong coding skills in C and Python and completed internships that deepened my passion for web and software development. Beyond academics, I volunteered with the National Service Scheme, contributing to community initiatives, and actively participated in ACM, where I organized events like coding competitions. This blend of technical expertise and community involvement has shaped my well-rounded journey."
     ],
   },
   {
-    title: "Jr Software Developer",
+    title: "Software Engineering Intern",
     company_name: "Optum, Hyderabad, India",
     icon: id,
-    iconBg: "#E6DEDD",
+    iconBg: "#facc15",
     date: "January 2021 - April 2021",
     points: [
-      "Designed and enhanced healthcare dashboards with React.js, Tailwind CSS, and Excel integration, improving reporting efficiency by 20%. Automated data validation in Python, reducing manual effort by 30%, and built RESTful APIs with Flask to handle 500+ daily patient data requests. Collaborated with DevOps to implement automated testing workflows, achieving 85% test coverage."
+      "Developed a healthcare dashboard with React.js, Tailwind CSS, and Excel integration, automated data validation with Python to reduce manual effort by 30%, built RESTful APIs in Flask handling 500+ daily patient data requests, and collaborated with DevOps to implement testing workflows, achieving 85% test coverage."
 
 ,
     ],
@@ -159,7 +161,7 @@ const experiences = [
     title: "Software Developer",
     company_name: "Accenture, Hyderabad, India",
     icon: id,
-    iconBg: "#383E56",
+    iconBg: "#facc15",
     date: "May 2021 - July 2022",
     points: [
       "Scaled transaction monitoring system to handle $3M+ daily transactions. Enhanced fraud detection system using ML models improving detection accuracy by 35%, and architected event sourcing solution with Apache Kafka processing 1K+ TPS. Implemented comprehensive WebSocket alert system reducing incident response time by 45% Contributed to transaction monitoring system using React.js and Java Spring Boot, helping process $1M+ daily transactions. Assisted in implementing fraud detection features using AWS GuardDuty and developed real-time alert notifications reducing response time by 30%."
@@ -171,7 +173,7 @@ const experiences = [
     title: "Master of science in Computer Science",
     company_name: "Binghamton univeristy",
     icon: edu,
-    iconBg: "#E6DEDD",
+    iconBg: "#facc15",
     date: "Aug 2022 - Dec 2024",
     points: [
       "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS. completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
@@ -181,10 +183,10 @@ const experiences = [
     title: "Software Development Engineer",
     company_name: "Sodexo, Binghamton, NY",
     icon: id,
-    iconBg: "#383E56",
+    iconBg: "#facc15",
     date: "Jan 2023 - Dec 2024",
     points: [
-      "Led development of high-performance microservices architecture using Java Spring Boot and React.js, processing 10K+ daily transactions through AWS cloud services. Implemented event-driven architecture with Kafka that reduced system latency by 25%, while maintaining 99.9% uptime and sub-200ms response times. Optimized system performance through custom caching and multi-region deployment, improving user satisfaction from 85% to 95%."
+      "Collaborated with a team to architect microservices using Java Spring Boot and React.js, enabling 10K+ daily transactions with 99.9% uptime on AWS ECS and Fargate; implemented event-driven architecture with Apache Kafka and AWS EventBridge to reduce data processing latency by 25%, and contributed to designing secure RESTful APIs with Spring WebFlux and API Gateway, achieving sub-200ms response times for 50K+ monthly API calls."
 
 
     ],
@@ -222,7 +224,7 @@ const projects = [
   {
     name: "Portfolio",
     description:
-      "Designed and developed an interactive portfolio leveraging React, showcasing real-time 3D graphics using D3.js. Implemented responsive UI/UX design techniques utilizing Tailwind CSS, enhancing user engagement across devices. Integrated advanced animations and effects with D3.js to create a unique, dynamic online presence for showcasing my work.",
+    "Developed an interactive portfolio using React and Tailwind CSS, ensuring responsive design and seamless functionality across devices. Added animations and transitions to enhance visual appeal and engagement, creating a platform to showcase skills and projects. Optimized performance for a smooth and intuitive user experience.",    
     tags: [
       {
         name: "reactjs",
@@ -243,8 +245,7 @@ const projects = [
   {
     name: "Market Sales Analysis",
     description:
-        "Analyzed sales data with Pandas, boosting forecast accuracy by 20% and reducing stockouts by 15%. Developed Tableau dashboards, improving data access by 30% and cutting retrieval time by 25%. Automated data processing with Pandas, cutting prep time by 40% and driving a 10% sales growth. Streamlined data workflows, enhancing efficiency and contributing to a 10% increase in overall productivity",
-    tags: [
+    "Analyzed sales data with Pandas, enhancing forecast accuracy by 20% and reducing stockouts by 15%. Developed Tableau dashboards, boosting data accessibility by 30% and cutting retrieval time by 25%. Automated data workflows, reducing prep time by 40%, driving a 10% sales increase, and improving overall productivity by 10% through streamlined processes and efficient data handling.",    tags: [
       {
         name: "Pandas",
         color: "blue-text-gradient",
@@ -265,6 +266,7 @@ const projects = [
     image: dashboard,
     source_code_link: "https://public.tableau.com/app/profile/krishna.preetham.bhavirisetty/viz/MarketSales2016-2019/Dashboard1",
   },
+  
   {
     name: "Task Management",
     description:
@@ -282,6 +284,24 @@ const projects = [
     ],
     image: todo,
     source_code_link: "https://github.com/Preethambhavirisetty/Task_management.git",
+  },
+  {
+    name: "Real-Time Route Planner",
+    description:
+    "Designed and developed a real-time route visualization website with a Python backend and ReactJS frontend, leveraging RESTful APIs for seamless integration between services. Implemented efficient route calculation algorithms and interactive map features, enabling users to visualize and optimize routes dynamically. Focused on delivering a responsive user experience, scalable architecture, and clean, maintainable code for long-term functionality." ,   
+    tags: [
+      {
+        name: "Reactjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Python",
+        color: "green-text-gradient",
+      },
+      
+    ],
+    image: georoute,
+    source_code_link: "https://github.com/Preethambhavirisetty/Geospatial-Visualization-and-Shortest-Path-Optimization",
   },
 ];
 

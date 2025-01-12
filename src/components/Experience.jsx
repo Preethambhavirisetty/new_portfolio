@@ -17,24 +17,26 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
+        background: "linear-gradient(to bottom right, white, white, #F5F5F5)",
+        color: "black",
+        boxShadow: "0 0 50px 0 rgba(0, 0, 0, 0.1)",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "20px solid  white" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ background: experience.iconBg}}
       icon={
-        <div className='flex justify-center items-center w-full h-full'>
+        <div className='flex justify-center items-center w-full h-full '>
           <img
             src={experience.icon}
             alt={experience.company_name}
             className='w-[60%] h-[60%] object-contain'
           />
+          
         </div>
       }
     >
-      <div>
-        <h3 className='text-[#facc15] text-[24px] font-bold'>{experience.title}</h3>
+      <div >
+        <h3 className='text-[#facc15] text-[20px] font-black'>{experience.title}</h3>
         <p
           className='text-secondary text-[16px] font-semibold'
           style={{ margin: 0 }}
@@ -47,7 +49,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-black-100 text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
@@ -68,13 +70,15 @@ const Experience = () => {
           Work Experience.
         </h2>
         <div className="flex items-center justify-center w-full">
-          <a className = "text-white-100 w-40 flex items-center justify-center rounded-full border-l-4 border-r-4 border-[#facc15]" href={ PreethamBhavirisetty } download>Download CV</a>
+          <a className = "text-black-100 w-36 flex items-center justify-center rounded-lg border border-[#facc15] py-2 hover:bg-[#facc15] transition ease-linear space-x-3" href={ PreethamBhavirisetty } download><span>Resume </span><i className="fa fa-download "></i></a>
         </div>
         
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
+        <VerticalTimeline
+          lineColor="#facc15" // Add this property if the library supports it
+          >
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}

@@ -23,7 +23,7 @@ const App = () => {
 };
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-black'>
+      <div className='relative z-0 bg-white'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
           <Hero />
@@ -43,3 +43,20 @@ const App = () => {
 }
 
 export default App;
+/*
+Navbar, Hero section - font:color
+ABout
+Experience
+  font:color
+  Expiriance line + icon border
+  Resume button
+  dates
+Projects
+  card bg: color
+  git hub links + photoes
+Contact
+logo change
+
+
+
+*/
