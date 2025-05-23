@@ -145,18 +145,7 @@ const experiences = [
       "During my bachelor's, I developed strong coding skills in C and Python and completed internships that deepened my passion for web and software development. Beyond academics, I volunteered with the National Service Scheme, contributing to community initiatives, and actively participated in ACM, where I organized events like coding competitions. This blend of technical expertise and community involvement has shaped my well-rounded journey."
     ],
   },
-  {
-    title: "Software Engineering Intern",
-    company_name: "Optum, Hyderabad, India",
-    icon: id,
-    iconBg: "#facc15",
-    date: "January 2021 - April 2021",
-    points: [
-      "Developed a healthcare dashboard with React.js, Tailwind CSS, and Excel integration, automated data validation with Python to reduce manual effort by 30%, built RESTful APIs in Flask handling 500+ daily patient data requests, and collaborated with DevOps to implement testing workflows, achieving 85% test coverage."
 
-,
-    ],
-  },
   {
     title: "Software Developer",
     company_name: "Accenture, Hyderabad, India",
