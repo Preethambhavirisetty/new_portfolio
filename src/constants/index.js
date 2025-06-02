@@ -140,7 +140,7 @@ const experiences = [
     company_name: "VR Siddartha Engineering College",
     icon: edu,
     iconBg: "#facc15",
-    date: "June 2018 - April 2022",
+    
     points: [
       "During my bachelor's, I developed strong coding skills in C and Python and completed internships that deepened my passion for web and software development. Beyond academics, I volunteered with the National Service Scheme, contributing to community initiatives, and actively participated in ACM, where I organized events like coding competitions. This blend of technical expertise and community involvement has shaped my well-rounded journey."
     ],
@@ -151,7 +151,7 @@ const experiences = [
     company_name: "Accenture, Hyderabad, India",
     icon: id,
     iconBg: "#facc15",
-    date: "May 2021 - July 2022",
+    
     points: [
       "Scaled transaction monitoring system to handle $3M+ daily transactions. Enhanced fraud detection system using ML models improving detection accuracy by 35%, and architected event sourcing solution with Apache Kafka processing 1K+ TPS. Implemented comprehensive WebSocket alert system reducing incident response time by 45% Contributed to transaction monitoring system using React.js and Java Spring Boot, helping process $1M+ daily transactions. Assisted in implementing fraud detection features using AWS GuardDuty and developed real-time alert notifications reducing response time by 30%."
 
@@ -163,7 +163,7 @@ const experiences = [
     company_name: "Binghamton univeristy",
     icon: edu,
     iconBg: "#facc15",
-    date: "Aug 2022 - Dec 2024",
+    
     points: [
       "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS. completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
     ],
@@ -173,7 +173,7 @@ const experiences = [
     company_name: "Sodexo, Binghamton, NY",
     icon: id,
     iconBg: "#facc15",
-    date: "Jan 2023 - Dec 2024",
+    
     points: [
       "Collaborated with a team to architect microservices using Java Spring Boot and React.js, enabling 10K+ daily transactions with 99.9% uptime on AWS ECS and Fargate; implemented event-driven architecture with Apache Kafka and AWS EventBridge to reduce data processing latency by 25%, and contributed to designing secure RESTful APIs with Spring WebFlux and API Gateway, achieving sub-200ms response times for 50K+ monthly API calls."
 
