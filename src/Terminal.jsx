@@ -333,15 +333,15 @@ const Terminal = () => {
       setCommandHistory([
         { type: 'output', content: '╔═══════════════════════════════════════════════════════════════════════════════╗' },
         { type: 'output', content: '║                                                                               ║' },
-        { type: 'output', content: '║     ██████╗ ███████╗██╗   ██╗                                                  ║' },
+        { type: 'output', content: '║    ██████╗ ███████╗██╗   ██╗                                                  ║' },
         { type: 'output', content: '║    ██╔══██╗██╔════╝██║   ██║                                                  ║' },
         { type: 'output', content: '║    ██║  ██║█████╗  ██║   ██║                                                  ║' },
         { type: 'output', content: '║    ██║  ██║██╔══╝  ╚██╗ ██╔╝                                                  ║' },
         { type: 'output', content: '║    ██████╔╝███████╗ ╚████╔╝                                                   ║' },
         { type: 'output', content: '║    ╚═════╝ ╚══════╝  ╚═══╝                                                    ║' },
         { type: 'output', content: '║                                                                               ║' },
-        { type: 'output', content: '║                    Welcome to Preetham&apos;s Terminal                              ║', hasName: true },
-        { type: 'output', content: '║              Senior Software Engineer | Backend & Cloud Infrastructure         ║' },
+        { type: 'output', content: '║                    Welcome to Preetham&apos;s Terminal                        ║', hasName: true },
+        { type: 'output', content: '║              Senior Software Engineer | Backend & Cloud Infrastructure        ║' },
         { type: 'output', content: '║                                                                               ║' },
         { type: 'output', content: '╚═══════════════════════════════════════════════════════════════════════════════╝' },
         { type: 'output', content: '' },
@@ -471,7 +471,7 @@ const Terminal = () => {
                 <>
                   <span className="terminal-content">                    Welcome to </span>
                   <span className="highlight-name">Preetham</span>
-                  <span className="terminal-content">&apos;s Terminal                              </span>
+                  <span className="terminal-content">&apos;s Terminal                            </span>
                 </>
               ) : item.isLink ? (
                 <a 

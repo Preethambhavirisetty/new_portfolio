@@ -35,9 +35,12 @@ body {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+  overflow-x: hidden;
   font-size: 14px;
   line-height: 1.6;
   font-family: "JetBrains Mono", "Courier New", monospace;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .terminal-body::-webkit-scrollbar {
@@ -60,7 +63,11 @@ body {
 .terminal-line {
   margin-bottom: 4px;
   word-wrap: break-word;
+  word-break: break-word;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .command-line {
@@ -99,6 +106,16 @@ body {
   display: inline;
 }
 
+.mobile-welcome-text {
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .mobile-welcome-text {
+    display: block;
+  }
+}
+
 .highlight-name {
   color: #58a6ff;
   font-weight: 700;
@@ -112,10 +129,13 @@ body {
   display: flex;
   align-items: center;
   margin-top: 8px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .terminal-input {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   outline: none;
@@ -124,6 +144,7 @@ body {
   font-family: "JetBrains Mono", "Courier New", monospace;
   caret-color: #58a6ff;
   width: 100%;
+  max-width: 100%;
 }
 
 .terminal-input::placeholder {
@@ -245,44 +266,126 @@ body {
   }
   
   .terminal-body {
-    padding: 12px;
-    font-size: 12px;
-    line-height: 1.5;
+    padding: 12px 8px;
+    font-size: 11px;
+    line-height: 1.4;
   }
   
   .terminal-line {
     margin-bottom: 2px;
     word-break: break-word;
     overflow-wrap: break-word;
-  }
-  
-  .terminal-input {
-    font-size: 12px;
-  }
-  
-  .terminal-prompt {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .terminal-body {
-    padding: 10px;
+    white-space: pre-wrap;
     font-size: 11px;
   }
   
   .terminal-input {
     font-size: 11px;
+    max-width: 100%;
   }
   
   .terminal-prompt {
     font-size: 11px;
     margin-right: 4px;
+    white-space: nowrap;
+  }
+  
+  .terminal-prompt .host {
+    display: none; /* Hide "portfolio" on mobile */
+  }
+  
+  .ascii-progress-bar {
+    font-size: 10px;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  
+  .progress-info {
+    font-size: 11px;
+  }
+  
+  .progress-package {
+    font-size: 10px;
+  }
+  
+  .progress-stats {
+    font-size: 10px;
+  }
+  
+  /* Make ASCII box responsive */
+  .terminal-line .terminal-content {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-container {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+  }
+  
+  .terminal-body {
+    padding: 8px 6px;
+    font-size: 9px;
+    line-height: 1.3;
+  }
+  
+  .terminal-line {
+    font-size: 9px;
+  }
+  
+  .terminal-input {
+    font-size: 9px;
+  }
+  
+  .terminal-prompt {
+    font-size: 9px;
+    margin-right: 2px;
+    flex-shrink: 0;
+  }
+  
+  .terminal-prompt .host {
+    display: none;
+  }
+  
+  .terminal-prompt .separator {
+    margin: 0 1px;
   }
   
   .highlight-name {
-    font-size: 11px;
-    padding: 1px 3px;
+    font-size: 9px;
+    padding: 1px 2px;
+  }
+  
+  .ascii-progress-bar {
+    font-size: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .progress-info {
+    font-size: 9px;
+  }
+  
+  .progress-package {
+    font-size: 8px;
+    word-break: break-all;
+  }
+  
+  .progress-stats {
+    font-size: 8px;
+  }
+  
+  .package-count {
+    font-size: 9px;
+  }
+  
+  /* Make ASCII box wrap on very small screens */
+  .terminal-line .terminal-content {
+    font-size: 8px;
+    letter-spacing: -0.5px;
   }
 }
 
