@@ -323,7 +323,7 @@ const Terminal = () => {
     }, 50);
 
     // Show progress bar (2-3 seconds)
-    await simulateProgress(2500);
+    await simulateProgress(1000);
 
     // Remove progress and add results
     const commandResults = executeCommand(cmd);

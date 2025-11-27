@@ -1,6 +1,5 @@
 import Terminal from "./Terminal";
 
-
 const App = () => {
   return (
     <div className="app">
