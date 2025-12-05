@@ -425,8 +425,11 @@ const Terminal = () => {
   }, []);
 
   return (
-    <div className="terminal-container">
-      <div className="terminal-body" ref={terminalRef}>
+    <div className="terminal-window-wrapper">
+      <div className="terminal-window">
+        {/* Terminal Container */}
+        <div className="terminal-container">
+          <div className="terminal-body" ref={terminalRef}>
         <AnimatePresence>
           {commandHistory.map((item, index) => (
             <motion.div
@@ -510,6 +513,8 @@ const Terminal = () => {
             disabled={isLoading}
           />
         </form>
+          </div>
+        </div>
       </div>
     </div>
   );
