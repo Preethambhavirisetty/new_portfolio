@@ -19,8 +19,8 @@ const Tech = () => {
 
 const Techball = ({icon}) => {
   return (
-    <div className=''>
-      <img src={icon} alt="tech" />
+    <div className='bg-cream-light/70 backdrop-blur-lg p-4 rounded-2xl border border-black-100/20 shadow-modern hover:bg-cream-light/90 transition-all'>
+      <img src={icon} alt="tech" className="w-full h-full object-contain" />
     </div>
   );
 };

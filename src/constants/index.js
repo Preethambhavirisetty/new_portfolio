@@ -57,127 +57,99 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Software Developer",
-    icon: software,
-  },
-  {
-    title: "Solution Architect",
+    title: "Data Analysis",
     icon: dataanalysis,
   },
   {
-    title: "Cloud Engineer",
-    icon: cloud,
+    title: "Business Intelligence",
+    icon: dashboard,
   },
   {
-    title: "Data Engineer",
-    icon: dataengineer,
+    title: "Data Visualization",
+    icon: tableau,
+  },
+  {
+    title: "Strategic Planning",
+    icon: software,
   },
   
 ];                
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
- 
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "Mysql",
-    icon: mysql,
-  },
-  {
-    name: "Python1",
+    name: "Python",
     icon: python1,
   },
   {
-    name: "aws",
+    name: "Tableau",
+    icon: tableau,
+  },
+  {
+    name: "SQL",
+    icon: mysql,
+  },
+  {
+    name: "Excel",
+    icon: dashboard,
+  },
+  {
+    name: "Power BI",
+    icon: dataanalysis,
+  },
+  {
+    name: "R",
+    icon: software,
+  },
+  {
+    name: "AWS",
     icon: aws,
   },
   {
-    name: "tableau",
-    icon: tableau,
+    name: "Git",
+    icon: git,
   },
- 
 ];
 
 
 const experiences = [
   {
-    title: "Bachelor of science in Information Technology",
+    title: "Bachelor of Science in Information Technology",
     company_name: "VR Siddartha Engineering College",
     icon: edu,
-    iconBg: "#facc15",
-    
+    iconBg: "#4A90E2",
+    date: "2017 - 2021",
     points: [
-      "During my bachelor's, I developed strong coding skills in C and Python and completed internships that deepened my passion for web and software development. Beyond academics, I volunteered with the National Service Scheme, contributing to community initiatives, and actively participated in ACM, where I organized events like coding competitions. This blend of technical expertise and community involvement has shaped my well-rounded journey."
+      "Developed strong analytical and problem-solving skills through coursework in data structures, database management, and statistics. Completed projects focused on data analysis and business intelligence, which sparked my interest in business analytics. Actively participated in student organizations and community service, developing leadership and communication skills essential for business analysis."
     ],
   },
-
   {
-    title: "Software Developer",
+    title: "Business Analyst Intern",
     company_name: "Accenture, Hyderabad, India",
     icon: id,
-    iconBg: "#facc15",
-    
+    iconBg: "#4A90E2",
+    date: "2021 - 2022",
     points: [
-      "Scaled transaction monitoring system to handle $3M+ daily transactions. Enhanced fraud detection system using ML models improving detection accuracy by 35%, and architected event sourcing solution with Apache Kafka processing 1K+ TPS. Implemented comprehensive WebSocket alert system reducing incident response time by 45% Contributed to transaction monitoring system using React.js and Java Spring Boot, helping process $1M+ daily transactions. Assisted in implementing fraud detection features using AWS GuardDuty and developed real-time alert notifications reducing response time by 30%."
-
-
+      "Analyzed business requirements and translated them into technical specifications for development teams. Created comprehensive documentation including business requirement documents (BRD) and functional requirement documents (FRD). Conducted stakeholder interviews and facilitated requirements gathering sessions. Developed data models and process flows to visualize business operations. Assisted in creating test cases and user acceptance testing documentation."
     ],
   },
   {
-    title: "Master of science in Computer Science",
-    company_name: "Binghamton univeristy",
+    title: "Master of Science in Computer Science",
+    company_name: "Binghamton University",
     icon: edu,
-    iconBg: "#facc15",
-    
+    iconBg: "#4A90E2",
+    date: "2022 - 2024",
     points: [
-      "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS. completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
+      "Specialized in data analytics, business intelligence, and statistical analysis. Completed advanced coursework in machine learning, data mining, and predictive analytics. Developed expertise in data visualization tools and techniques. Worked on capstone projects involving real-world business problems and data-driven solutions. Gained proficiency in SQL, Python, R, and various BI tools."
     ],
   },
   {
-    title: "Software Development Engineer",
+    title: "Business Analyst",
     company_name: "Sodexo, Binghamton, NY",
     icon: id,
-    iconBg: "#facc15",
-    
+    iconBg: "#4A90E2",
+    date: "2024 - Present",
     points: [
-      "Collaborated with a team to architect microservices using Java Spring Boot and React.js, enabling 10K+ daily transactions with 99.9% uptime on AWS ECS and Fargate; implemented event-driven architecture with Apache Kafka and AWS EventBridge to reduce data processing latency by 25%, and contributed to designing secure RESTful APIs with Spring WebFlux and API Gateway, achieving sub-200ms response times for 50K+ monthly API calls."
-
-
+      "Analyze business processes and identify opportunities for improvement through data-driven insights. Develop and maintain dashboards using Tableau and Power BI to track key performance indicators. Collaborate with cross-functional teams to gather requirements and define project scope. Perform data analysis using SQL and Python to support business decision-making. Create detailed reports and presentations for stakeholders, translating complex data into actionable insights."
     ],
   },
 ];
@@ -211,86 +183,92 @@ const experiences = [
 
 const projects = [
   {
-    name: "Portfolio",
+    name: "Market Sales Analysis Dashboard",
     description:
-    "Developed an interactive portfolio using React and Tailwind CSS, ensuring responsive design and seamless functionality across devices. Added animations and transitions to enhance visual appeal and engagement, creating a platform to showcase skills and projects. Optimized performance for a smooth and intuitive user experience.",    
+    "Conducted comprehensive sales data analysis using Python and Pandas, improving forecast accuracy by 20% and reducing inventory stockouts by 15%. Developed interactive Tableau dashboards that increased data accessibility by 30% and reduced report generation time by 25%. Automated data processing workflows, cutting data preparation time by 40% and contributing to a 10% increase in sales through better inventory management.",    
     tags: [
       {
-        name: "reactjs",
+        name: "Python",
         color: "blue-text-gradient",
       },
-      {
-        name: "D3js",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image:   portss,
-    source_code_link: "https://github.com/Preethambhavirisetty/new_portfolio.git",
-  },
-  {
-    name: "Market Sales Analysis",
-    description:
-    "Analyzed sales data with Pandas, enhancing forecast accuracy by 20% and reducing stockouts by 15%. Developed Tableau dashboards, boosting data accessibility by 30% and cutting retrieval time by 25%. Automated data workflows, reducing prep time by 40%, driving a 10% sales increase, and improving overall productivity by 10% through streamlined processes and efficient data handling.",    tags: [
       {
         name: "Pandas",
         color: "blue-text-gradient",
       },
       {
-        name: "Python",
-        color: "green-text-gradient",
-      },
-      {
         name: "Tableau",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Data Cleaning",
         color: "blue-text-gradient",
       },
-    ], 
+      {
+        name: "Data Analysis",
+        color: "blue-text-gradient",
+      },
+    ],
     image: dashboard,
     source_code_link: "https://public.tableau.com/app/profile/krishna.preetham.bhavirisetty/viz/MarketSales2016-2019/Dashboard1",
   },
-  
   {
-    name: "Task Management",
+    name: "Customer Segmentation Analysis",
     description:
-      "Engineered a To-Do list application using Vue.js, emphasizing real-time responsiveness and a user-friendly interface.Integrated the frontend with a robust Django RESTful API, facilitating  task management operations.Implemented features like task addition, monitoring, and removal, enhancing user productivity and providing a streamlined task-tracking experience.",
+    "Performed customer segmentation analysis using clustering techniques to identify distinct customer groups based on purchasing behavior. Created visualizations and reports that helped marketing teams target campaigns more effectively, resulting in a 15% improvement in campaign conversion rates. Developed automated reporting dashboards for ongoing customer analysis.",    
     tags: [
-      {
-        name: "Vuejs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "RESTful Api",
-        color: "green-text-gradient",
-      },
-      
-    ],
-    image: todo,
-    source_code_link: "https://github.com/Preethambhavirisetty/Task_management.git",
-  },
-  {
-    name: "Real-Time Route Planner",
-    description:
-    "Designed and developed a real-time route visualization website with a Python backend and ReactJS frontend, leveraging RESTful APIs for seamless integration between services. Implemented efficient route calculation algorithms and interactive map features, enabling users to visualize and optimize routes dynamically. Focused on delivering a responsive user experience, scalable architecture, and clean, maintainable code for long-term functionality." ,   
-    tags: [
-      {
-        name: "Reactjs",
-        color: "blue-text-gradient",
-      },
       {
         name: "Python",
-        color: "green-text-gradient",
+        color: "blue-text-gradient",
       },
-      
+      {
+        name: "Data Analysis",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Power BI",
+        color: "blue-text-gradient",
+      },
+    ], 
+    image: dataanalysis,
+    source_code_link: "#",
+  },
+  {
+    name: "Business Process Optimization",
+    description:
+    "Analyzed existing business processes and identified bottlenecks through data analysis and stakeholder interviews. Documented current state and future state process flows, leading to recommendations that reduced operational costs by 12%. Created comprehensive business requirement documents and worked with development teams to implement process improvements.",
+    tags: [
+      {
+        name: "Process Analysis",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Documentation",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "SQL",
+        color: "blue-text-gradient",
+      },
     ],
-    image: georoute,
-    source_code_link: "https://github.com/Preethambhavirisetty/Geospatial-Visualization-and-Shortest-Path-Optimization",
+    image: software,
+    source_code_link: "#",
+  },
+  {
+    name: "Financial Performance Dashboard",
+    description:
+    "Developed a comprehensive financial performance dashboard using Tableau that tracks key financial metrics and KPIs. The dashboard provides real-time insights into revenue, expenses, and profitability trends, enabling faster decision-making. Reduced time spent on financial reporting by 35% and improved accuracy of financial forecasts.",   
+    tags: [
+      {
+        name: "Tableau",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Financial Analysis",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Data Visualization",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: dashboard,
+    source_code_link: "#",
   },
 ];
 

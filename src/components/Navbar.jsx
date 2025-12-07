@@ -30,7 +30,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-white" : "bg-transparent"
+        scrolled ? "bg-cream-light/90 backdrop-blur-lg shadow-modern border-b border-black-100/10" : "bg-transparent"
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -43,7 +43,7 @@ const Navbar = () => {
           }}
         >
           <img src={logonav} alt='logonav' className='w-11 h-11 object-contain' />
-          <p className={`${scrolled ? "text-black" : "text-black"} text-[18px] font-bold cursor-pointer flex `}>
+          <p className={`${scrolled ? "text-black-100" : "text-black-100"} text-[18px] font-bold cursor-pointer flex `}>
             Bhavirisetty&nbsp;
             <span className='sm:block hidden'>|  Preetham</span>
           </p>
@@ -54,8 +54,8 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-black" : "text-black"
-              } hover:text-[#facc15] text-[18px] font-medium cursor-pointer`}
+                active === nav.title ? "text-black-100 underline" : "text-black-100"
+              } hover:underline text-[18px] font-medium cursor-pointer transition-colors`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -74,14 +74,14 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 bg-cream-light border border-black-100/20 shadow-modern absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
+                    active === nav.title ? "text-black-100 underline" : "text-black-100"
                   }`}
                   onClick={() => {
                     setToggle(!toggle);

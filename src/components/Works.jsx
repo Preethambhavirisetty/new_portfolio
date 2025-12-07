@@ -24,10 +24,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full border-2 border-yellow-500 shadow-lg"
-        style={{
-          background: "linear-gradient(to bottom right, white, white, #F5F5F5)",
-        }}
+        className="bg-cream-light/70 backdrop-blur-lg p-5 rounded-2xl sm:w-[360px] w-full border-2 border-black-100/20 shadow-modern"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -41,7 +38,7 @@ const ProjectCard = ({
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              className="bg-black-100/80 backdrop-blur-sm w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:bg-black-100 transition-colors shadow-modern border border-cream-light/20"
             >
               <img
                 src={github}
@@ -53,8 +50,8 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5">
-          <h3 className="text-[#facc15] font-black text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <h3 className="text-black-100 font-black text-[24px]">{name}</h3>
+          <p className="mt-2 text-black-100 text-[14px]">{description}</p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -83,13 +80,13 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-black text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-black-100 text-[17px] max-w-3xl leading-[30px]"
         >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
+          Following projects showcase my skills and experience through
+          real-world examples of my work. Each project demonstrates my
+          ability to analyze data, create meaningful visualizations, and provide
+          actionable business insights. These projects reflect my expertise in
+          business analysis, data-driven decision making, and strategic planning.
         </motion.p>
       </div>
 

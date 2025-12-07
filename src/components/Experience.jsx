@@ -17,13 +17,15 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "linear-gradient(to bottom right, white, white, #F5F5F5)",
-        color: "black",
+        background: "rgba(254, 249, 231, 0.8)",
+        backdropFilter: "blur(10px)",
+        color: "#000000",
         boxShadow: "0 0 50px 0 rgba(0, 0, 0, 0.1)",
+        border: "1px solid rgba(0, 0, 0, 0.2)",
       }}
-      contentArrowStyle={{ borderRight: "20px solid  white" }}
+      contentArrowStyle={{ borderRight: "20px solid  #E8F4F8" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg}}
+      iconStyle={{ background: "#FEF9E7", border: "2px solid #000000"}}
       icon={
         <div className='flex justify-center items-center w-full h-full '>
           <img
@@ -36,9 +38,9 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div >
-        <h3 className='text-[#facc15] text-[20px] font-black'>{experience.title}</h3>
+        <h3 className='text-black-100 text-[20px] font-black'>{experience.title}</h3>
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className='text-black-100 text-[16px] font-semibold'
           style={{ margin: 0 }}
         >
           {experience.company_name}
@@ -70,14 +72,14 @@ const Experience = () => {
           Work Experience.
         </h2>
         <div className="flex items-center justify-center w-full">
-          <a className = "text-black-100 w-36 flex items-center justify-center rounded-lg border border-[#facc15] py-2 hover:bg-[#facc15] transition ease-linear space-x-3" href={ PreethamBhavirisetty } download><span>Resume </span><i className="fa fa-download "></i></a>
+          <a className = "text-white w-36 flex items-center justify-center rounded-lg bg-black-100 backdrop-blur-sm border border-black-100 py-2 hover:bg-black-200 transition ease-linear space-x-3 shadow-modern" href={ PreethamBhavirisetty } download><span>Resume </span><i className="fa fa-download "></i></a>
         </div>
         
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline
-          lineColor="#facc15" // Add this property if the library supports it
+          lineColor="#000000" // Add this property if the library supports it
           >
           {experiences.map((experience, index) => (
             <ExperienceCard

@@ -11,30 +11,30 @@ import { bye } from "../assets";
 // template_c11294f
 // service_mbv90dk
 // K1YIsgzpDz6AhT_Ik
-const ContactHead = () => <h3 className={styles.sectionHeadText}>Contact.</h3>;
+const ContactHead = () => <h3 className={`${styles.sectionHeadText} text-black-100`}>Contact.</h3>;
 const EmailDiv = () => {
   return (
     <div
-        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg bg-[#facc15] cursor-pointer hover:opacity-80"
+        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg bg-black-100 backdrop-blur-sm text-white cursor-pointer hover:bg-black-200 transition-colors shadow-modern border border-black-100"
         onClick={() => navigator.clipboard.writeText("kbhavir1@binghamton.edu")}
       >
-        <span className="text-gray-800">
+        <span className="text-white">
           <i class="fa fa-copy"></i>
         </span>
-        <span>Copy Email</span>
+        <span className="text-white">Copy Email</span>
       </div>
   )
 }
 const NumberDiv = () => {
   return (
     <div
-        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg border-2 border-[#facc15] cursor-pointer hover:text-[#a79036]"
+        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg border-2 border-black-100 text-black-100 cursor-pointer hover:bg-cream-dark transition-colors backdrop-blur-sm"
         onClick={() => navigator.clipboard.writeText("+17168089656")}
       >
-        <span className="text-gray-800">
+        <span className="text-black-100">
           <i class="fa fa-copy"></i>
         </span>
-        <span>Copy Number</span>
+        <span className="text-black-100">Copy Number</span>
       </div>
   )
 }
@@ -48,7 +48,7 @@ const LinkedinDiv = () => {
           href="https://www.linkedin.com/in/preetham2001/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-700 hover:opacity-80 text-lg"
+          className="text-black-100 hover:text-black-200 text-lg transition-colors"
         >
           LinkedIn
         </a>
@@ -58,14 +58,14 @@ const LinkedinDiv = () => {
 const GithubDiv = () => {
   return (
     <div className="flex items-center space-x-3">
-        <span className="text-gray-800">
+        <span className="text-black-100">
           <i class="text-xl fa fa-github"></i>
         </span>
         <a
           href="https://github.com/Preethambhavirisetty"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-700 hover:opacity-80 text-lg"
+          className="text-black-100 hover:text-black-200 text-lg transition-colors"
         >
           GitHub
         </a>
@@ -78,28 +78,28 @@ const HomeDiv = () => {
         <span className="text-blue-800">
           <i className="fa fa-map-marker text-xl"></i>
         </span>
-        <span className="text-xl text-gray-700">Salt Lake City, Utah</span>
+        <span className="text-xl text-black-100">Salt Lake City, Utah</span>
       </div>
   )
 }
 
 const Copyright = ({ }) => {
   return (
-    <div className="absolute bottom-0 text-sm font-light">Made with <i className="text-red-600 fa fa-heart"></i> #BetterJobs</div>
+    <div className="absolute bottom-0 text-sm font-light text-black-100/80">Made with passion #BetterJobs</div>
   )
 }
 
 const Contact = () => {
 
   return (
-    <div className="w-full h-full text-center">
+    <div className="w-full h-full text-center bg-cream-light relative">
       <ContactHead />
     <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden h-full`}
+      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden h-full relative z-10`}
     >
     <motion.div
       variants={slideIn("left", "tween", 0.2, 1)}
-      className='relative flex-[0.75] bg-gradient-to-bl from-gray-50 via-gray-50 to-gray-200 p-8 rounded-2xl h-96 flex flex-col justify-center items-center gap-3 shadow-md'
+      className='relative flex-[0.75] bg-cream-light/80 backdrop-blur-lg p-8 rounded-2xl h-96 flex flex-col justify-center items-center gap-3 shadow-modern border border-black-100/20'
     >
     
         <div className="flex flex-col gap-10">
