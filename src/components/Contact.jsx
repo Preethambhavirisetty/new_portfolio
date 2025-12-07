@@ -1,139 +1,176 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import { bye } from "../assets";
 
-// template_c11294f
-// service_mbv90dk
-// K1YIsgzpDz6AhT_Ik
-const ContactHead = () => <h3 className={`${styles.sectionHeadText} text-black-100`}>Contact.</h3>;
-const EmailDiv = () => {
-  return (
-    <div
-        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg bg-black-100 backdrop-blur-sm text-white cursor-pointer hover:bg-black-200 transition-colors shadow-modern border border-black-100"
-        onClick={() => navigator.clipboard.writeText("kbhavir1@binghamton.edu")}
-      >
-        <span className="text-white">
-          <i class="fa fa-copy"></i>
-        </span>
-        <span className="text-white">Copy Email</span>
-      </div>
-  )
-}
-const NumberDiv = () => {
-  return (
-    <div
-        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg border-2 border-black-100 text-black-100 cursor-pointer hover:bg-cream-dark transition-colors backdrop-blur-sm"
-        onClick={() => navigator.clipboard.writeText("+17168089656")}
-      >
-        <span className="text-black-100">
-          <i class="fa fa-copy"></i>
-        </span>
-        <span className="text-black-100">Copy Number</span>
-      </div>
-  )
-}
-const LinkedinDiv = () => {
-  return (
-    <div className="flex items-center space-x-3">
-        <span className="text-blue-500">
-          <i class="fa fa-linkedin text-xl"></i>
-        </span>
-        <a
-          href="https://www.linkedin.com/in/preetham2001/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-black-100 hover:text-black-200 text-lg transition-colors"
-        >
-          LinkedIn
-        </a>
-      </div>
-  )
-}
-const GithubDiv = () => {
-  return (
-    <div className="flex items-center space-x-3">
-        <span className="text-black-100">
-          <i class="text-xl fa fa-github"></i>
-        </span>
-        <a
-          href="https://github.com/Preethambhavirisetty"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-black-100 hover:text-black-200 text-lg transition-colors"
-        >
-          GitHub
-        </a>
-      </div>
-  )
-}
-const HomeDiv = () => {
-  return (
-    <div className="flex items-center space-x-3">
-        <span className="text-blue-800">
-          <i className="fa fa-map-marker text-xl"></i>
-        </span>
-        <span className="text-xl text-black-100">Salt Lake City, Utah</span>
-      </div>
-  )
-}
+const ContactHead = () => (
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-center mb-8 lg:mb-12"
+  >
+    <h3 className={`${styles.sectionHeadText} text-black-100 mb-2`}>Contact.</h3>
+    <p className="text-black-100/60 text-sm lg:text-base font-light tracking-wide">
+      Let's connect and discuss how we can work together
+    </p>
+  </motion.div>
+);
 
-const Copyright = ({ }) => {
-  return (
-    <div className="absolute bottom-0 text-sm font-light text-black-100/80">Made with passion #BetterJobs</div>
-  )
-}
+const ContactInfoCard = ({ icon, label, value, href, onClick, isButton = false }) => {
+  const content = (
+    <div className={`flex items-center gap-4 p-4 lg:p-5 bg-cream-light/60 backdrop-blur-sm border border-black-100/20 rounded-lg hover:bg-cream-light/80 transition-all group ${isButton ? 'cursor-pointer' : ''}`} onClick={onClick}>
+      <div className="w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center bg-black-100/5 rounded-lg group-hover:bg-black-100/10 transition-colors">
+        <i className={`${icon} text-black-100 text-lg lg:text-xl`}></i>
+      </div>
+      <div className="flex-1 text-left">
+        <p className="text-black-100/60 text-xs lg:text-sm font-light mb-1">{label}</p>
+        <p className="text-black-100 text-sm lg:text-base font-medium">{value}</p>
+      </div>
+      {isButton && (
+        <i className="fa fa-copy text-black-100/40 group-hover:text-black-100 transition-colors"></i>
+      )}
+    </div>
+  );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
+};
+
+const SocialLink = ({ icon, label, href, color = "text-black-100" }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`flex items-center gap-3 p-3 lg:p-4 bg-cream-light/60 backdrop-blur-sm border border-black-100/20 rounded-lg hover:bg-cream-light/80 hover:border-black-100/40 transition-all group`}
+  >
+    <div className={`w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-lg bg-black-100/5 group-hover:bg-black-100/10 transition-colors`}>
+      <i className={`${icon} ${color} text-lg lg:text-xl`}></i>
+    </div>
+    <span className="text-black-100 text-sm lg:text-base font-medium">{label}</span>
+    <i className="fa fa-external-link text-black-100/40 text-xs ml-auto"></i>
+  </a>
+);
 
 const Contact = () => {
+  const copyToClipboard = (text, type) => {
+    navigator.clipboard.writeText(text);
+    // You can add a toast notification here if needed
+  };
 
   return (
-    <div className="w-full h-full text-center bg-cream-light relative">
-      <ContactHead />
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden h-full relative z-10`}
-    >
-    <motion.div
-      variants={slideIn("left", "tween", 0.2, 1)}
-      className='relative flex-[0.75] bg-cream-light/80 backdrop-blur-lg p-8 rounded-2xl h-96 flex flex-col justify-center items-center gap-3 shadow-modern border border-black-100/20'
-    >
-    
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-row gap-1">
-            <div className="flex flex-col justify-end gap-1">
-                <HomeDiv/>
-                <LinkedinDiv/>
-                <GithubDiv/>
-            </div>
-            <div className="flex flex-row gap-3"> 
-              <img width="150" height="150" src={bye} />
-            </div>
-          </div>
-          <div className="flex flex-row gap-3">
-            <EmailDiv/>
-            <NumberDiv/>
-          </div>
-      </div>
+    <div className="w-full min-h-screen bg-cream-light relative overflow-hidden px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-10 w-40 h-40 border border-black-100/10 rotate-45 hidden lg:block"></div>
+      <div className="absolute bottom-20 left-10 w-32 h-32 border border-black-100/10 rotate-12 hidden lg:block"></div>
+      <div className="absolute top-1/2 right-0 w-px h-64 bg-gradient-to-b from-transparent via-black-100/20 to-transparent hidden xl:block"></div>
 
-  
-      
-          <Copyright />
-  
-      
-    </motion.div>
-        
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[400px]'
+      <div className="max-w-7xl mx-auto relative z-10">
+        <ContactHead />
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Side - Contact Information */}
+          <motion.div
+            variants={slideIn("left", "tween", 0.2, 1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="space-y-4">
+              <ContactInfoCard
+                icon="fa fa-envelope"
+                label="Email"
+                value="kbhavir1@binghamton.edu"
+                onClick={() => copyToClipboard("kbhavir1@binghamton.edu", "email")}
+                isButton={true}
+              />
+              
+              <ContactInfoCard
+                icon="fa fa-phone"
+                label="Phone"
+                value="+1 (716) 808-9656"
+                onClick={() => copyToClipboard("+17168089656", "phone")}
+                isButton={true}
+              />
+              
+              <ContactInfoCard
+                icon="fa fa-map-marker"
+                label="Location"
+                value="Salt Lake City, Utah"
+              />
+            </div>
+
+            <div className="pt-4 border-t border-black-100/20">
+              <p className="text-black-100/60 text-sm font-light mb-4">Connect with me</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <SocialLink
+                  icon="fa fa-linkedin"
+                  label="LinkedIn"
+                  href="https://www.linkedin.com/in/preetham2001/"
+                  color="text-blue-600"
+                />
+                <SocialLink
+                  icon="fa fa-github"
+                  label="GitHub"
+                  href="https://github.com/Preethambhavirisetty"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Side - Image */}
+          <motion.div
+            variants={slideIn("right", "tween", 0.2, 1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="relative flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-md lg:max-w-lg">
+              {/* Decorative frame */}
+              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-black-100/20 hidden lg:block"></div>
+              
+              {/* Image container */}
+              <div className="relative bg-cream-light/50 backdrop-blur-sm p-4 lg:p-6 border border-black-100/20 shadow-modern">
+                <img
+                  src="https://i.pinimg.com/736x/35/7f/b9/357fb9b1544798cdd63c5417ff7723dd.jpg"
+                  alt="Contact"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+              
+              {/* Decorative corner elements */}
+              <div className="absolute -bottom-2 -left-2 w-16 h-16 border-l-2 border-b-2 border-black-100/20 hidden md:block"></div>
+              <div className="absolute -top-2 -right-2 w-16 h-16 border-r-2 border-t-2 border-black-100/20 hidden md:block"></div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Footer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-center mt-12 lg:mt-16 pt-8 border-t border-black-100/10"
         >
-        <EarthCanvas />
-      </motion.div>
+          <p className="text-black-100/60 text-xs lg:text-sm font-light">
+            Made with passion #BetterJobs
+          </p>
+        </motion.div>
+      </div>
     </div>
-          </div>
   );
 };
 
