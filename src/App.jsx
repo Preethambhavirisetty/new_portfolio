@@ -2,38 +2,38 @@ import { BrowserRouter } from "react-router-dom";
 
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
-const App = () => {
-  const onButtonClick = () => {
-     
-    // using Java Script method to get PDF file
-    fetch("SamplePDF.pdf").then((response) => {
-        response.blob().then((blob) => {
-         
-            // Creating new object of PDF file
-            const fileURL =
-                window.URL.createObjectURL(blob);
-                 
-            // Setting various property values
-            let alink = document.createElement("a");
-            alink.href = fileURL;
-            alink.download = "SamplePDF.pdf";
-            alink.click();
-        });
+
+const onButtonClick = () => {
+  // using Java Script method to get PDF file
+  fetch("SamplePDF.pdf").then((response) => {
+    response.blob().then((blob) => {
+
+      // Creating new object of PDF file
+      const fileURL =
+        window.URL.createObjectURL(blob);
+
+      // Setting various property values
+      let alink = document.createElement("a");
+      alink.href = fileURL;
+      alink.download = "SamplePDF.pdf";
+      alink.click();
     });
+  });
 };
+
+const App = () => {
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-cream-light'>
-        <div className='bg-cream-light'>
+      <div className='relative z-0 bg-white'>
+        <div className=''>
           <Navbar />
           <Hero />
         </div>
-        <About />
+        {/* <About /> */}
         <Experience />
         <Tech />
         <Works />
-        {/* <Feedbacks /> */}
-        <div className='relative z-0 bg-cream-light'>
+        <div className='relative z-0 bg-gray-100'>
           <Contact />
         </div>
       </div>
@@ -42,20 +42,3 @@ const App = () => {
 }
 
 export default App;
-/*
-Navbar, Hero section - font:color
-ABout
-Experience
-  font:color
-  Expiriance line + icon border
-  Resume button
-  dates
-Projects
-  card bg: color
-  git hub links + photoes
-Contact
-logo change
-
-
-
-*/

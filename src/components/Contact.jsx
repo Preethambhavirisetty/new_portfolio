@@ -3,34 +3,22 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import { slideIn, textVariant, fadeIn } from "../utils/motion";
+import { theme, cn } from "../theme";
 
-const ContactHead = () => (
-  <motion.div
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    className="text-center mb-8 lg:mb-12"
-  >
-    <h3 className={`${styles.sectionHeadText} text-black-100 mb-3`}>Contact</h3>
-    <p className="text-black-100/60 text-sm lg:text-base font-light tracking-wide">
-      Let's connect and discuss how we can work together
-    </p>
-  </motion.div>
-);
 
 const ContactInfoCard = ({ icon, label, value, href, onClick, isButton = false }) => {
   const content = (
-    <div className={`flex items-center gap-4 p-5 lg:p-6 bg-white/70 backdrop-blur-sm border border-black-100/15 rounded-xl hover:bg-white/90 hover:shadow-lg transition-all duration-300 group ${isButton ? 'cursor-pointer' : ''}`} onClick={onClick}>
-      <div className="w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center bg-black-100/5 rounded-lg group-hover:bg-black-100/10 transition-colors">
-        <i className={`${icon} text-black-100 text-lg lg:text-xl`}></i>
+    <div className={cn("flex items-center gap-3", theme.padding.card, theme.backgrounds.cardAlt, theme.borders.medium, "rounded-xl hover:bg-white/90 hover:shadow-lg transition-all duration-300 group", isButton ? 'cursor-pointer' : '')} onClick={onClick}>
+      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-black-100/5 rounded-lg group-hover:bg-black-100/10 transition-colors">
+        <i className={cn(icon, theme.textColors.primary, theme.fontSizes.body)}></i>
       </div>
-      <div className="flex-1 text-left">
-        <p className="text-black-100/60 text-xs lg:text-sm font-light mb-1">{label}</p>
-        <p className="text-black-100 text-sm lg:text-base font-medium">{value}</p>
+      <div className="flex-1 text-left min-w-0">
+        <p className={cn(theme.textColors.muted, theme.fontSizes.small, theme.fontWeights.light, "mb-1")}>{label}</p>
+        <p className={cn(theme.textColors.primary, theme.fontSizes.bodySm, theme.fontWeights.medium, "truncate")}>{value}</p>
       </div>
       {isButton && (
-        <i className="fa fa-copy text-black-100/40 group-hover:text-black-100 transition-colors"></i>
+        <i className={cn("fa fa-copy", theme.textColors.light, "group-hover:text-black-100 transition-colors flex-shrink-0")}></i>
       )}
     </div>
   );
@@ -51,13 +39,13 @@ const SocialLink = ({ icon, label, href, color = "text-black-100" }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`flex items-center gap-4 p-4 lg:p-5 bg-white/70 backdrop-blur-sm border border-black-100/15 rounded-xl hover:bg-white/90 hover:border-black-100/30 hover:shadow-lg transition-all duration-300 group`}
+    className={cn("flex items-center gap-4", theme.padding.cardMd, theme.backgrounds.cardAlt, theme.borders.medium, "rounded-xl hover:bg-white/90 hover:border-black-100/30 hover:shadow-lg transition-all duration-300 group")}
   >
     <div className={`w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-lg bg-black-100/5 group-hover:bg-black-100/10 transition-colors`}>
       <i className={`${icon} ${color} text-lg lg:text-xl`}></i>
     </div>
-    <span className="text-black-100 text-sm lg:text-base font-medium">{label}</span>
-    <i className="fa fa-external-link text-black-100/40 text-xs ml-auto"></i>
+    <span className={cn(theme.textColors.primary, theme.fontSizes.bodyLg, theme.fontWeights.medium)}>{label}</span>
+    <i className={cn("fa fa-external-link", theme.textColors.light, theme.fontSizes.small, "ml-auto")}></i>
   </a>
 );
 
@@ -68,24 +56,36 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-cream-light relative overflow-hidden px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-      {/* Subtle Decorative Elements */}
-      <div className="absolute top-20 right-10 w-32 h-32 border border-black-100/5 rotate-45 hidden lg:block"></div>
-      <div className="absolute bottom-20 left-10 w-24 h-24 border border-black-100/5 rotate-12 hidden lg:block"></div>
+    <div className="">
+      <div className={cn(theme.sectionHeader)} variants={textVariant()}>
+        <h2 className={cn(theme.sectionHeading, "text-center")}>
+          Contact
+        </h2>
+        {/* Underline */}
+        <div className={theme.underline} />
+      </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <ContactHead />
+      <div 
+        className="w-full flex justify-center"
+        variants={fadeIn("", "", 0.1, 1)}
+      >
+        <p className={cn(theme.margins.sectionDescription, theme.descriptionText)}>
+          Let's connect and discuss how we can work together.
+        </p>
+      </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Side - Contact Information */}
+      <div className={cn("mt-5", theme.containerWidths.section, "mx-auto relative", theme.padding.section)}>
+        {/* Subtle Background */}
+        <div className="absolute inset-0 bg-black-100/2 rounded-3xl blur-3xl"></div>
+        <div className="relative w-full bg-white/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border-t border-black-100/20 border-x border-b border-black-100/10 shadow-lg">
           <motion.div
-            variants={slideIn("left", "tween", 0.2, 1)}
+            // variants={slideIn("up", "tween", 0.2, 1)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="space-y-4">
+            <div className={cn("grid grid-cols-1 md:grid-cols-3", theme.gaps.sm, "mb-2")}>
               <ContactInfoCard
                 icon="fa fa-envelope"
                 label="Email"
@@ -109,9 +109,9 @@ const Contact = () => {
               />
             </div>
 
-            <div className="pt-6 border-t border-black-100/20">
-              <p className="text-black-100/70 text-sm font-medium mb-5 tracking-wide">Connect with me</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className={cn("pt-6", theme.borders.strong, "border-t")}>
+              <p className={cn(theme.textColors.tertiary, theme.fontSizes.bodySm, theme.fontWeights.medium, "mb-5 text-center tracking-wide")}>Connect with me</p>
+              <div className={cn("flex flex-col sm:flex-row justify-center", theme.gaps.xs)}>
                 <SocialLink
                   icon="fa fa-linkedin"
                   label="LinkedIn"
@@ -126,164 +126,23 @@ const Contact = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Right Side - Image */}
-          <motion.div
-            variants={slideIn("right", "tween", 0.2, 1)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="relative flex justify-center lg:justify-end"
-          >
-            <div className="relative w-full max-w-md lg:max-w-lg">
-              {/* Decorative frame */}
-              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-black-100/20 hidden lg:block"></div>
-              
-              {/* Image container */}
-              <div className="relative bg-cream-light/50 backdrop-blur-sm p-4 lg:p-6 border border-black-100/20 shadow-modern">
-                <img
-                  src="https://i.pinimg.com/736x/35/7f/b9/357fb9b1544798cdd63c5417ff7723dd.jpg"
-                  alt="Contact"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </div>
-              
-              {/* Decorative corner elements */}
-              <div className="absolute -bottom-2 -left-2 w-16 h-16 border-l-2 border-b-2 border-black-100/20 hidden md:block"></div>
-              <div className="absolute -top-2 -right-2 w-16 h-16 border-r-2 border-t-2 border-black-100/20 hidden md:block"></div>
-            </div>
-          </motion.div>
         </div>
+      </div>
 
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-center mt-12 lg:mt-16 pt-8 border-t border-black-100/10"
-        >
-          <p className="text-black-100/50 text-xs lg:text-sm font-light tracking-wide">
-            © 2024 Tejaswi Raavi. All rights reserved.
-          </p>
-        </motion.div>
+      {/* Footer */}
+      <div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        className={cn("text-center", theme.margins.sectionContent, "pt-8", theme.borders.default, "border-t pb-2")}
+      >
+        <p className={cn(theme.textColors.light, theme.fontSizes.smallLg, theme.fontWeights.light, "tracking-wide")}>
+          © 2024 Tejaswi Raavi. All rights reserved.
+        </p>
       </div>
     </div>
   );
 };
 
 export default SectionWrapper(Contact, "contact");
-
-{/* <motion.div className="bg-gradient-to-tr from-gray-50 via-gray-100 to-gray-300 p-6 rounded-lg shadow-lg w-96 mx-auto"> */}
-/*
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    console.log(form, "email");
-    emailjs
-      .send(
-        'service_mbv90dk',
-        'template_c11294f',
-        {
-          from_name: form.name,
-          to_name: "Preetham Bhavirisetty",
-          from_email: form.email,
-          to_email: "preethamk.967@gmail.com",
-          message: form.message,
-        },
-        'K1YIsgzpDz6AhT_Ik'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
-  };
-  */
-{/* <motion.div
-  variants={slideIn("left", "tween", 0.2, 1)}
-  className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
->
-  <p className={styles.sectionSubText}>Get in touch</p>
-  <h3 className={styles.sectionHeadText}>Contact.</h3>
-
-  <form
-    ref={formRef}
-    onSubmit={handleSubmit}
-    className='mt-12 flex flex-col gap-8'
-  >
-    <label className='flex flex-col'>
-      <span className='text-white font-medium mb-4'>Your Name</span>
-      <input
-        type='text'
-        name='name'
-        value={form.name}
-        onChange={handleChange}
-        placeholder="What's your name?"
-        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-      />
-    </label>
-    <label className='flex flex-col'>
-      <span className='text-white font-medium mb-4'>Your email</span>
-      <input
-        type='email'
-        name='email'
-        value={form.email}
-        onChange={handleChange}
-        placeholder="What's your Email?"
-        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-      />
-    </label>
-    <label className='flex flex-col'>
-      <span className='text-white font-medium mb-4'>Your Message</span>
-      <textarea
-        rows={7}
-        name='message'
-        value={form.message}
-        onChange={handleChange}
-        placeholder='What you want to say?'
-        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-      />
-    </label>
-
-    <button
-      type='submit'
-      className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-    >
-      {loading ? "Sending..." : "Send"}
-    </button>
-  </form>
-</motion.div> */}
