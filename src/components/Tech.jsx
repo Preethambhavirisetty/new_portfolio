@@ -19,7 +19,7 @@ const Tech = () => {
 
 const Techball = ({icon}) => {
   return (
-    <div className='bg-cream-light/70 backdrop-blur-lg p-4 rounded-2xl border border-black-100/20 shadow-modern hover:bg-cream-light/90 transition-all'>
+    <div className='bg-white/80 backdrop-blur-lg p-5 rounded-2xl border border-black-100/10 shadow-lg hover:shadow-xl hover:bg-white/95 transition-all duration-300 hover:-translate-y-1'>
       <img src={icon} alt="tech" className="w-full h-full object-contain" />
     </div>
   );

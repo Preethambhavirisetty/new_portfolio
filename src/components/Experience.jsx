@@ -17,15 +17,16 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "rgba(254, 249, 231, 0.8)",
+        background: "rgba(255, 255, 255, 0.95)",
         backdropFilter: "blur(10px)",
         color: "#000000",
-        boxShadow: "0 0 50px 0 rgba(0, 0, 0, 0.1)",
-        border: "1px solid rgba(0, 0, 0, 0.2)",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
+        border: "1px solid rgba(0, 0, 0, 0.1)",
+        borderRadius: "12px",
       }}
-      contentArrowStyle={{ borderRight: "20px solid  #E8F4F8" }}
+      contentArrowStyle={{ borderRight: "15px solid rgba(255, 255, 255, 0.95)" }}
       date={experience.date}
-      iconStyle={{ background: "#FEF9E7", border: "2px solid #000000"}}
+      iconStyle={{ background: "#FFFFFF", border: "2px solid #000000", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)"}}
       icon={
         <div className='flex justify-center items-center w-full h-full '>
           <img
@@ -37,21 +38,21 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div >
-        <h3 className='text-black-100 text-[20px] font-black'>{experience.title}</h3>
+      <div>
+        <h3 className='text-black-100 text-xl sm:text-2xl font-bold mb-2'>{experience.title}</h3>
         <p
-          className='text-black-100 text-[16px] font-semibold'
+          className='text-black-100/80 text-base sm:text-lg font-semibold mb-1'
           style={{ margin: 0 }}
         >
           {experience.company_name}
         </p>
       </div>
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
+      <ul className='mt-6 list-disc ml-5 space-y-3'>
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-black-100 text-[14px] pl-1 tracking-wider'
+            className='text-black-100/90 text-sm sm:text-base leading-relaxed pl-1'
           >
             {point}
           </li>
@@ -66,14 +67,22 @@ const Experience = () => {
     <>
       <motion.div className="w-full" variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
+          Professional Journey
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
+        <h2 className={`${styles.sectionHeadText} text-center mt-2`}>
+          Experience
         </h2>
-        <div className="flex items-center justify-center w-full">
-          <a className = "text-white w-36 flex items-center justify-center rounded-lg bg-black-100 backdrop-blur-sm border border-black-100 py-2 hover:bg-black-200 transition ease-linear space-x-3 shadow-modern" href={ PreethamBhavirisetty } download><span>Resume </span><i className="fa fa-download "></i></a>
-        </div>
+        <motion.div 
+          className="flex items-center justify-center w-full mt-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <a className="text-white px-8 py-3 flex items-center justify-center gap-3 rounded-lg bg-black-100 border border-black-100 hover:bg-black-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-medium text-sm sm:text-base" href={PreethamBhavirisetty} download>
+            <span>Download Resume</span>
+            <i className="fa fa-download"></i>
+          </a>
+        </motion.div>
         
       </motion.div>
 

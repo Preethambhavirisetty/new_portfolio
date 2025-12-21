@@ -24,7 +24,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-cream-light/70 backdrop-blur-lg p-5 rounded-2xl sm:w-[360px] w-full border-2 border-black-100/20 shadow-modern"
+        className="bg-white/80 backdrop-blur-lg p-6 rounded-2xl sm:w-[380px] w-full border border-black-100/15 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -49,19 +49,19 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="mt-5">
-          <h3 className="text-black-100 font-black text-[24px]">{name}</h3>
-          <p className="mt-2 text-black-100 text-[14px]">{description}</p>
+        <div className="mt-6">
+          <h3 className="text-black-100 font-bold text-xl sm:text-2xl mb-3">{name}</h3>
+          <p className="text-black-100/80 text-sm sm:text-base leading-relaxed">{description}</p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <p
+            <span
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className="text-xs sm:text-sm px-3 py-1.5 bg-black-100/5 border border-black-100/10 rounded-full text-black-100/70 font-medium"
             >
-              #{tag.name}
-            </p>
+              {tag.name}
+            </span>
           ))}
         </div>
       </Tilt>
@@ -73,24 +73,24 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={styles.sectionSubText}>My Work</p>
+        <h2 className={`${styles.sectionHeadText} mt-2`}>Projects</h2>
       </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-black-100 text-[17px] max-w-3xl leading-[30px]"
-        >
+      <motion.div 
+        className="w-full flex"
+        variants={fadeIn("", "", 0.1, 1)}
+      >
+        <p className="mt-6 text-black-100/80 text-base sm:text-lg max-w-4xl leading-relaxed">
           Following projects showcase my skills and experience through
           real-world examples of my work. Each project demonstrates my
           ability to analyze data, create meaningful visualizations, and provide
           actionable business insights. These projects reflect my expertise in
           business analysis, data-driven decision making, and strategic planning.
-        </motion.p>
-      </div>
+        </p>
+      </motion.div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-24 flex flex-wrap justify-center gap-8 lg:gap-10">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

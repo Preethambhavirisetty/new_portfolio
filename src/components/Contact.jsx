@@ -12,7 +12,7 @@ const ContactHead = () => (
     transition={{ duration: 0.6 }}
     className="text-center mb-8 lg:mb-12"
   >
-    <h3 className={`${styles.sectionHeadText} text-black-100 mb-2`}>Contact.</h3>
+    <h3 className={`${styles.sectionHeadText} text-black-100 mb-3`}>Contact</h3>
     <p className="text-black-100/60 text-sm lg:text-base font-light tracking-wide">
       Let's connect and discuss how we can work together
     </p>
@@ -21,7 +21,7 @@ const ContactHead = () => (
 
 const ContactInfoCard = ({ icon, label, value, href, onClick, isButton = false }) => {
   const content = (
-    <div className={`flex items-center gap-4 p-4 lg:p-5 bg-cream-light/60 backdrop-blur-sm border border-black-100/20 rounded-lg hover:bg-cream-light/80 transition-all group ${isButton ? 'cursor-pointer' : ''}`} onClick={onClick}>
+    <div className={`flex items-center gap-4 p-5 lg:p-6 bg-white/70 backdrop-blur-sm border border-black-100/15 rounded-xl hover:bg-white/90 hover:shadow-lg transition-all duration-300 group ${isButton ? 'cursor-pointer' : ''}`} onClick={onClick}>
       <div className="w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center bg-black-100/5 rounded-lg group-hover:bg-black-100/10 transition-colors">
         <i className={`${icon} text-black-100 text-lg lg:text-xl`}></i>
       </div>
@@ -51,7 +51,7 @@ const SocialLink = ({ icon, label, href, color = "text-black-100" }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`flex items-center gap-3 p-3 lg:p-4 bg-cream-light/60 backdrop-blur-sm border border-black-100/20 rounded-lg hover:bg-cream-light/80 hover:border-black-100/40 transition-all group`}
+    className={`flex items-center gap-4 p-4 lg:p-5 bg-white/70 backdrop-blur-sm border border-black-100/15 rounded-xl hover:bg-white/90 hover:border-black-100/30 hover:shadow-lg transition-all duration-300 group`}
   >
     <div className={`w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-lg bg-black-100/5 group-hover:bg-black-100/10 transition-colors`}>
       <i className={`${icon} ${color} text-lg lg:text-xl`}></i>
@@ -69,10 +69,9 @@ const Contact = () => {
 
   return (
     <div className="w-full min-h-screen bg-cream-light relative overflow-hidden px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-40 h-40 border border-black-100/10 rotate-45 hidden lg:block"></div>
-      <div className="absolute bottom-20 left-10 w-32 h-32 border border-black-100/10 rotate-12 hidden lg:block"></div>
-      <div className="absolute top-1/2 right-0 w-px h-64 bg-gradient-to-b from-transparent via-black-100/20 to-transparent hidden xl:block"></div>
+      {/* Subtle Decorative Elements */}
+      <div className="absolute top-20 right-10 w-32 h-32 border border-black-100/5 rotate-45 hidden lg:block"></div>
+      <div className="absolute bottom-20 left-10 w-24 h-24 border border-black-100/5 rotate-12 hidden lg:block"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <ContactHead />
@@ -90,39 +89,39 @@ const Contact = () => {
               <ContactInfoCard
                 icon="fa fa-envelope"
                 label="Email"
-                value="kbhavir1@binghamton.edu"
-                onClick={() => copyToClipboard("kbhavir1@binghamton.edu", "email")}
+                value="tejaswir2468@gmail.com"
+                onClick={() => copyToClipboard("tejaswir2468@gmail.com", "email")}
                 isButton={true}
               />
               
               <ContactInfoCard
                 icon="fa fa-phone"
                 label="Phone"
-                value="+1 (716) 808-9656"
-                onClick={() => copyToClipboard("+17168089656", "phone")}
+                value="+1 (832) 469-7808"
+                onClick={() => copyToClipboard("+18324697808", "phone")}
                 isButton={true}
               />
               
               <ContactInfoCard
                 icon="fa fa-map-marker"
                 label="Location"
-                value="Salt Lake City, Utah"
+                value="Naperville, IL"
               />
             </div>
 
-            <div className="pt-4 border-t border-black-100/20">
-              <p className="text-black-100/60 text-sm font-light mb-4">Connect with me</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="pt-6 border-t border-black-100/20">
+              <p className="text-black-100/70 text-sm font-medium mb-5 tracking-wide">Connect with me</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SocialLink
                   icon="fa fa-linkedin"
                   label="LinkedIn"
-                  href="https://www.linkedin.com/in/preetham2001/"
+                  href="https://www.linkedin.com/in/tejaswiraavi"
                   color="text-blue-600"
                 />
                 <SocialLink
                   icon="fa fa-github"
                   label="GitHub"
-                  href="https://github.com/Preethambhavirisetty"
+                  href="https://github.com"
                 />
               </div>
             </div>
@@ -165,8 +164,8 @@ const Contact = () => {
           transition={{ delay: 0.4 }}
           className="text-center mt-12 lg:mt-16 pt-8 border-t border-black-100/10"
         >
-          <p className="text-black-100/60 text-xs lg:text-sm font-light">
-            Made with passion #BetterJobs
+          <p className="text-black-100/50 text-xs lg:text-sm font-light tracking-wide">
+            © 2024 Tejaswi Raavi. All rights reserved.
           </p>
         </motion.div>
       </div>

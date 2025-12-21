@@ -19,15 +19,17 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className="bg-cream-light/70 backdrop-blur-lg rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col border border-black-100/20 shadow-modern"
+        className="bg-white/80 backdrop-blur-lg rounded-2xl py-8 px-10 min-h-[300px] flex justify-evenly items-center flex-col border border-black-100/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
       >
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-        />
+        <div className="w-20 h-20 flex items-center justify-center bg-black-100/5 rounded-xl mb-2">
+          <img
+            src={icon}
+            alt={title}
+            className="w-14 h-14 object-contain"
+          />
+        </div>
 
-        <h3 className="text-black-100 text-[20px] font-bold text-center">
+        <h3 className="text-black-100 text-lg sm:text-xl font-semibold text-center mt-3">
           {title}
         </h3>
       </div>
@@ -40,17 +42,17 @@ const About = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={`${styles.sectionHeadText} mt-2`}>About Me</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-black-100 text-[17px] max-w-3xl leading-[30px]"
+        className="mt-6 text-black-100/90 text-base sm:text-lg lg:text-[18px] max-w-4xl leading-relaxed sm:leading-[32px]"
       >
-        Data is how I transform business challenges into strategic opportunities. As a Business Analyst, I specialize in analyzing complex datasets, creating insightful visualizations, and translating findings into actionable recommendations. My portfolio showcases my journey through impactful projects, demonstrating my expertise in data analysis, business intelligence, and process optimization. I work collaboratively with stakeholders to understand business needs, identify improvement opportunities, and deliver solutions that drive meaningful results.
+        Data Analyst with expertise in improving data retrieval efficiency by 30%. Skilled in Excel VBA, Tableau, and Power BI, boosting analysis and engagement by up to 40%. Proficient in SQL for Amazon Redshift and AWS services for data integration and experienced in version control and collaborative coding through GitHub. Enhanced testing efficiency by 35% using Python and machine learning libraries. Experienced in Agile project management, increasing team productivity by 15% and improving data accuracy by 30%. Fluent in English, with strong written and verbal communication skills used in client-facing and cross-functional roles.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-24 flex flex-wrap justify-center gap-8 lg:gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

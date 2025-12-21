@@ -29,8 +29,8 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-cream-light/90 backdrop-blur-lg shadow-modern border-b border-black-100/10" : "bg-transparent"
+      } w-full flex items-center py-4 sm:py-5 fixed top-0 z-20 transition-all duration-300 ${
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-md border-b border-black-100/10" : "bg-transparent"
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -43,19 +43,18 @@ const Navbar = () => {
           }}
         >
           <img src={logonav} alt='logonav' className='w-11 h-11 object-contain' />
-          <p className={`${scrolled ? "text-black-100" : "text-black-100"} text-[18px] font-bold cursor-pointer flex `}>
-            Bhavirisetty&nbsp;
-            <span className='sm:block hidden'>|  Preetham</span>
+          <p className={`${scrolled ? "text-black-100" : "text-black-100"} text-lg sm:text-xl font-semibold cursor-pointer font-serif tracking-tight`}>
+            Tejaswi Raavi
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className='list-none hidden sm:flex flex-row gap-8 lg:gap-10'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-black-100 underline" : "text-black-100"
-              } hover:underline text-[18px] font-medium cursor-pointer transition-colors`}
+                active === nav.title ? "text-black-100 border-b-2 border-black-100" : "text-black-100/80"
+              } hover:text-black-100 pb-1 text-base lg:text-lg font-medium cursor-pointer transition-all duration-300 border-b-2 border-transparent`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
