@@ -14,7 +14,7 @@ const Terminal = () => {
     { type: 'output', content: '║                          ██████╔╝███████╗ ╚████╔╝                             ║' },
     { type: 'output', content: '║                          ╚═════╝ ╚══════╝  ╚═══╝                              ║' },
     { type: 'output', content: '║                    Welcome to Preetham\'s Terminal                            ║', hasName: true },
-    { type: 'output', content: '║              Senior Software Engineer | Backend & Cloud Infrastructure        ║' },
+    { type: 'output', content: '║              AI/ML & Software Engineer | Backend & Cloud Infrastructure        ║' },
     { type: 'output', content: '║                                                                               ║' },
     { type: 'output', content: '╚═══════════════════════════════════════════════════════════════════════════════╝' },
     { type: 'output', content: '' },
@@ -103,23 +103,60 @@ const Terminal = () => {
       ];
       
       const experienceDates = [
-        '2017 - 2021',
-        '2021 - 2022',
-        '2022 - 2024',
-        '2024 - Present'
+        'Sep 2025 - Present',
+        'Sep 2024 - Aug 2025',
+        'Sep 2020 - Jul 2022',
+        'Aug 2022 - Dec 2024',
+        'May 2018 - Jun 2022'
       ];
       
       experiences.forEach((exp, idx) => {
-        output.push({ type: 'output', content: `[${idx + 1}] ${exp.title}` });
-        output.push({ type: 'output', content: `    Company: ${exp.company_name}` });
-        output.push({ type: 'output', content: `    Period: ${experienceDates[idx] || 'N/A'}` });
-        output.push({ type: 'output', content: '' });
-        exp.points.forEach(point => {
-          output.push({ type: 'output', content: `    • ${point}` });
-        });
-        output.push({ type: 'output', content: '' });
+        // Check if this is education (last 2 items)
+        const isEducation = idx >= experiences.length - 2;
+        
+        if (!isEducation) {
+          // Professional Experience Format
+          output.push({ type: 'output', content: `┌─ ${exp.title}` });
+          output.push({ type: 'output', content: `│  ${exp.company_name}` });
+          output.push({ type: 'output', content: `│  ${experienceDates[idx] || 'N/A'}` });
+          output.push({ type: 'output', content: '│' });
+          
+          exp.points.forEach((point, pointIdx) => {
+            // Split point into achievement and result
+            const resultMatch = point.match(/Result:\s*(.+)$/);
+            const achievement = resultMatch ? point.substring(0, point.indexOf('Result:')).trim() : point;
+            const result = resultMatch ? resultMatch[1].trim() : null;
+            
+            output.push({ type: 'output', content: `│  • ${achievement}` });
+            if (result) {
+              output.push({ type: 'output', content: `│    → ${result}` });
+            }
+            if (pointIdx < exp.points.length - 1) {
+              output.push({ type: 'output', content: '│' });
+            }
+          });
+          
+          output.push({ type: 'output', content: '└─' });
+        } else {
+          // Education Format (simpler)
+          output.push({ type: 'output', content: `┌─ ${exp.title}` });
+          output.push({ type: 'output', content: `│  ${exp.company_name}` });
+          output.push({ type: 'output', content: `│  ${experienceDates[idx] || 'N/A'}` });
+          if (exp.points && exp.points.length > 0) {
+            output.push({ type: 'output', content: '│' });
+            exp.points.forEach((point) => {
+              output.push({ type: 'output', content: `│  • ${point}` });
+            });
+          }
+          output.push({ type: 'output', content: '└─' });
+        }
+        
+        if (idx < experiences.length - 1) {
+          output.push({ type: 'output', content: '' });
+        }
       });
       
+      output.push({ type: 'output', content: '' });
       output.push({ type: 'output', content: `✓ Installed ${experiences.length} packages`, isPackageCount: true });
       output.push({ type: 'output', content: '' });
       
@@ -146,14 +183,13 @@ const Terminal = () => {
       return output;
     },
     contact: () => {
-      const contactItems = 6; // Email, Phone, Location, Social header, LinkedIn, GitHub
+      const contactItems = 6; // Email, Phone, Social header, LinkedIn, GitHub
       return [
         { type: 'output', content: 'Contact Information' },
         { type: 'output', content: '═══════════════════════════════════════════════════════════════════════════════' },
         { type: 'output', content: '' },
-        { type: 'output', content: 'Email:    kbhavir1@binghamton.edu', isLink: true, link: 'mailto:kbhavir1@binghamton.edu' },
+        { type: 'output', content: 'Email:    preethambhavirisetty@gmail.com', isLink: true, link: 'mailto:preethambhavirisetty@gmail.com' },
         { type: 'output', content: 'Phone:    +1 (716) 808-9656', isLink: true, link: 'tel:+17168089656' },
-        { type: 'output', content: 'Location: Salt Lake City, Utah' },
         { type: 'output', content: '' },
         { type: 'output', content: 'Social:' },
         { type: 'output', content: '  LinkedIn: https://www.linkedin.com/in/preetham2001/', isLink: true, link: 'https://www.linkedin.com/in/preetham2001/' },
@@ -169,33 +205,52 @@ const Terminal = () => {
         { type: 'output', content: 'About' },
         { type: 'output', content: '═══════════════════════════════════════════════════════════════════════════════' },
         { type: 'output', content: '' },
-        { type: 'output', content: 'Senior Software Engineer specializing in backend systems and cloud infrastructure.' },
-        { type: 'output', content: '' },
-        { type: 'output', content: 'I architect scalable microservices, design distributed systems, and build' },
-        { type: 'output', content: 'high-performance cloud solutions. With expertise in Java, Spring Boot, AWS,' },
-        { type: 'output', content: 'Kafka, and containerization, I transform complex technical challenges into' },
-        { type: 'output', content: 'production-ready systems.' },
+        { type: 'output', content: 'Software Engineer with 4+ years of experience building production-grade backend' },
+        { type: 'output', content: 'systems and integrating AI-driven workflows into customer-facing products. Strong' },
+        { type: 'output', content: 'ownership of end-to-end backend architecture, with a focus on scalable system' },
+        { type: 'output', content: 'design, clean APIs, operational excellence, and reliable cloud deployments.' },
         { type: 'output', content: '' },
         { type: 'output', content: 'Education:' },
-        { type: 'output', content: '  • Master of Science in Computer Science - Binghamton University' },
-        { type: 'output', content: '  • Bachelor of Science in Information Technology - VR Siddartha Engineering College' },
+        { type: 'output', content: '  • Master of Science in Computer Science - Binghamton University, NY (Aug 2022 - Dec 2024)' },
+        { type: 'output', content: '  • Bachelor of Technology in Information Technology - VR Siddhartha Engineering College, India (May 2018 - Jun 2022)' },
         { type: 'output', content: '' },
         { type: 'output', content: `✓ Installed ${aboutSections} packages`, isPackageCount: true },
         { type: 'output', content: '' }
       ];
     },
     skills: () => {
-      const skillCategories = 6; // Languages, Frameworks, Cloud, Databases, Tools, Architecture
+      const skillCategories = 7; // AI/ML, Backend, Data, MLOps, Cloud, Observability, Core Strengths
       return [
         { type: 'output', content: 'Technical Skills' },
         { type: 'output', content: '═══════════════════════════════════════════════════════════════════════════════' },
         { type: 'output', content: '' },
-        { type: 'output', content: 'Languages:     Java, Python, JavaScript, TypeScript, SQL' },
-        { type: 'output', content: 'Frameworks:    Spring Boot, Spring WebFlux, React.js, Node.js' },
-        { type: 'output', content: 'Cloud:         AWS (ECS, Fargate, EventBridge, API Gateway, GuardDuty)' },
-        { type: 'output', content: 'Databases:     MongoDB, MySQL, PostgreSQL' },
-        { type: 'output', content: 'Tools:         Docker, Kubernetes, Apache Kafka, Git, CI/CD' },
-        { type: 'output', content: 'Architecture:  Microservices, Event-Driven, RESTful APIs, WebSockets' },
+        { type: 'output', content: 'AI / Applied ML & GenAI:' },
+        { type: 'output', content: '  IBM Watson Assistant, IBM Watson Orchestrator, GPT, LLaMA, Hugging Face' },
+        { type: 'output', content: '  Transformers, LangChain, LlamaIndex, prompt engineering, AI summarization,' },
+        { type: 'output', content: '  Retrieval-Augmented Generation (RAG)' },
+        { type: 'output', content: '' },
+        { type: 'output', content: 'Backend Engineering:' },
+        { type: 'output', content: '  Node.js, TypeScript, Python, REST API design, microservices architecture,' },
+        { type: 'output', content: '  request routing, multi-tenant backend design, API authentication (JWT)' },
+        { type: 'output', content: '' },
+        { type: 'output', content: 'Data & Pipelines:' },
+        { type: 'output', content: '  Vector databases (embeddings & similarity search), Apache Kafka' },
+        { type: 'output', content: '  (event pipelines), batch processing, scheduled jobs, data normalization' },
+        { type: 'output', content: '' },
+        { type: 'output', content: 'MLOps & Deployment:' },
+        { type: 'output', content: '  Docker, CI/CD (Jenkins, Octopus Deploy), environment-based deployments,' },
+        { type: 'output', content: '  Airflow (scheduled pipelines)' },
+        { type: 'output', content: '' },
+        { type: 'output', content: 'Cloud & Infrastructure:' },
+        { type: 'output', content: '  AWS (EC2, S3, Lambda), containerized deployments, cloud networking' },
+        { type: 'output', content: '' },
+        { type: 'output', content: 'Observability & Reliability:' },
+        { type: 'output', content: '  Structured logging, metrics, CloudWatch, production monitoring,' },
+        { type: 'output', content: '  failure handling, debugging' },
+        { type: 'output', content: '' },
+        { type: 'output', content: 'Core Engineering Strengths:' },
+        { type: 'output', content: '  System design, scalability, reliability, end-to-end backend ownership,' },
+        { type: 'output', content: '  production issue resolution' },
         { type: 'output', content: '' },
         { type: 'output', content: `✓ Installed ${skillCategories} packages`, isPackageCount: true },
         { type: 'output', content: '' }

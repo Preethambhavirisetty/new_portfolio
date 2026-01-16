@@ -7,31 +7,49 @@ import georoute from "../assets/georoute.png";
 
 const experiences = [
   {
-    title: "Bachelor of science in Information Technology",
-    company_name: "VR Siddartha Engineering College",
+    title: "Software Engineer – Backend",
+    company_name: "Aetna (CVS Health)",
     points: [
-      "During my bachelor's, I developed strong coding skills in C and Python and completed internships that deepened my passion for web and software development. Beyond academics, I volunteered with the National Service Scheme, contributing to community initiatives, and actively participated in ACM, where I organized events like coding competitions. This blend of technical expertise and community involvement has shaped my well-rounded journey."
+      "Designed and implemented backend services for a multi-intent conversational AI system using Node.js and TypeScript, handling prompt routing, intent resolution, and response orchestration. Result: Improved request handling throughput by ~35% while maintaining low latency under peak traffic.",
+      "Integrated IBM Watson Assistant and IBM Watson Orchestrator with custom backend logic to manage conversation state, skill invocation, and fallback handling. Result: Reduced intent misrouting and manual intervention by ~30%.",
+      "Built backend APIs to preprocess user inputs, enrich context, and enforce business rules before invoking AI services. Result: Improved response consistency and reduced AI hallucinations in production flows.",
+      "Implemented CI/CD pipelines using Jenkins and Octopus Deploy, enabling controlled, environment-specific releases across QA and production. Result: Reduced deployment failures and rollback time by ~40%.",
+      "Added structured logging, correlation IDs, and runtime metrics for chatbot interactions and backend services. Result: Improved production debugging time and issue resolution speed by ~45%."
     ],
   },
   {
-    title: "Software Developer",
-    company_name: "Accenture, Hyderabad, India",
+    title: "Software Engineer – Backend / Cloud & AI",
+    company_name: "Cloud5.ai",
     points: [
-      "Scaled transaction monitoring system to handle $3M+ daily transactions. Enhanced fraud detection system using ML models improving detection accuracy by 35%, and architected event sourcing solution with Apache Kafka processing 1K+ TPS. Implemented comprehensive WebSocket alert system reducing incident response time by 45% Contributed to transaction monitoring system using React.js and Java Spring Boot, helping process $1M+ daily transactions. Assisted in implementing fraud detection features using AWS GuardDuty and developed real-time alert notifications reducing response time by 30%."
+      "Designed backend services in Python and Node.js to ingest, normalize, and serve AI-ready data from heterogeneous sources. Result: Reduced data ingestion latency by ~30% and improved pipeline reliability.",
+      "Implemented Retrieval-Augmented Generation (RAG) pipelines using embeddings and vector databases to support contextual AI responses. Result: Improved answer relevance and accuracy for downstream AI systems.",
+      "Built scalable APIs to serve AI inference requests, handling batching, retries, and graceful degradation. Result: Increased system stability during high-traffic inference workloads.",
+      "Deployed backend services on cloud infrastructure using containerization and automated CI pipelines. Result: Reduced manual deployment effort and improved release consistency.",
+      "Collaborated with product and AI teams to translate ambiguous requirements into production-ready backend designs. Result: Faster feature delivery and reduced rework during integration phases."
     ],
   },
   {
-    title: "Master of science in Computer Science",
-    company_name: "Binghamton univeristy",
+    title: "Software Engineer – Application Development",
+    company_name: "CRED (India)",
     points: [
-      "In my master's, I delved deep into design patterns and web development technologies like React, Angular, and AWS. completing various projects and continually drawing knowledge from esteemed professors, underscoring my belief that learning is an endless journey.",
+      "Developed backend APIs for user workflows using Java/Python, focusing on correctness, validation, and performance. Result: Supported reliable feature launches used by thousands of active users.",
+      "Implemented business logic for transaction processing, user onboarding, and account-level operations. Result: Reduced production bugs through improved validation and error handling.",
+      "Worked closely with senior engineers to refactor legacy modules and improve code maintainability. Result: Improved code readability and reduced onboarding time for new developers.",
+      "Participated in production support, debugging live issues, and rolling out fixes under tight SLAs. Result: Improved system stability and gained hands-on experience with real-world production systems."
     ],
   },
   {
-    title: "Software Development Engineer",
-    company_name: "Sodexo, Binghamton, NY",
+    title: "Master of Science in Computer Science",
+    company_name: "Binghamton University, NY",
     points: [
-      "Collaborated with a team to architect microservices using Java Spring Boot and React.js, enabling 10K+ daily transactions with 99.9% uptime on AWS ECS and Fargate; implemented event-driven architecture with Apache Kafka and AWS EventBridge to reduce data processing latency by 25%, and contributed to designing secure RESTful APIs with Spring WebFlux and API Gateway, achieving sub-200ms response times for 50K+ monthly API calls."
+      "Completed advanced coursework in computer science with focus on system design, distributed systems, and software engineering principles."
+    ],
+  },
+  {
+    title: "Bachelor of Technology in Information Technology",
+    company_name: "VR Siddhartha Engineering College, India",
+    points: [
+      "Developed strong foundation in software engineering, data structures, algorithms, and system design. Completed various projects demonstrating technical proficiency and problem-solving abilities."
     ],
   },
 ];
@@ -39,73 +57,64 @@ const experiences = [
 
 const projects = [
   {
-    name: "Portfolio",
+    name: "NoteLite — Cloud-Native Note-Taking Platform",
     description:
-    "Developed an interactive portfolio using React and Tailwind CSS, ensuring responsive design and seamless functionality across devices. Added animations and transitions to enhance visual appeal and engagement, creating a platform to showcase skills and projects. Optimized performance for a smooth and intuitive user experience.",    
+    "Designed and built a lightweight, cloud-native note-taking application to support fast, distraction-free note management with a strong focus on backend performance, data consistency, and secure user isolation. Designed and implemented RESTful backend APIs using Node.js and TypeScript to support note creation, updates, deletions, and retrieval with user-level data segregation. Result: Achieved low-latency CRUD operations and consistent performance under concurrent usage. Implemented authentication and authorization using token-based security to ensure user-specific access to notes. Result: Prevented cross-user data access and ensured secure multi-user usage. Designed scalable data persistence models optimized for frequent read/write operations and future extensibility. Result: Enabled seamless scaling without schema rework. Containerized backend services and deployed using automated CI/CD pipelines. Result: Reduced manual deployment effort and ensured consistent releases across environments. Added structured logging and request tracing to monitor backend health and debug production issues efficiently. Result: Reduced issue diagnosis time and improved system reliability.",    
     tags: [
       {
-        name: "reactjs",
+        name: "Node.js",
       },
       {
-        name: "D3js",
+        name: "TypeScript",
       },
       {
-        name: "tailwind",
+        name: "REST APIs",
+      },
+      {
+        name: "Docker",
+      },
+      {
+        name: "CI/CD",
+      },
+      {
+        name: "Authentication",
+      },
+      {
+        name: "Cloud Deployment",
       },
     ],
-    image:   portss,
-    source_code_link: "https://github.com/Preethambhavirisetty/new_portfolio.git",
+    image: portss,
+    source_code_link: "https://www.notelite.org/",
   },
   {
-    name: "Market Sales Analysis",
+    name: "AI-Powered Finance Tracker",
     description:
-    "Analyzed sales data with Pandas, enhancing forecast accuracy by 20% and reducing stockouts by 15%. Developed Tableau dashboards, boosting data accessibility by 30% and cutting retrieval time by 25%. Automated data workflows, reducing prep time by 40%, driving a 10% sales increase, and improving overall productivity by 10% through streamlined processes and efficient data handling.",    tags: [
+    "Built an end-to-end finance tracking platform that allows users to manage expenses, income, and financial insights across multiple profiles, enhanced with AI-generated summaries to simplify financial understanding and decision-making. Designed backend services to support multi-profile financial data isolation, enabling users to manage multiple financial accounts or personas within a single platform. Result: Enabled clean separation of financial data while maintaining a unified user experience. Implemented backend APIs for transaction ingestion, categorization, and aggregation, supporting expense tracking, income tracking, and historical analysis. Result: Provided accurate and structured financial views across profiles. Integrated AI-based summarization to generate natural-language financial insights (monthly spend summaries, category trends, anomalies). Result: Improved financial clarity and reduced manual analysis for users. Built data processing pipelines to normalize raw financial entries into analytics-ready formats. Result: Improved consistency and accuracy of financial reporting. Deployed backend services on cloud infrastructure with containerization and environment-specific configurations. Result: Ensured reliable operation and simplified future scaling. Added logging and basic observability to track AI requests, data processing failures, and API performance. Result: Improved production visibility and faster debugging.",    
+    tags: [
       {
-        name: "Pandas",
+        name: "Node.js",
       },
       {
         name: "Python",
       },
       {
-        name: "Tableau",
+        name: "REST APIs",
       },
       {
-        name: "Data Cleaning",
+        name: "AI Summarization",
       },
-    ], 
+      {
+        name: "Cloud Deployment",
+      },
+      {
+        name: "Docker",
+      },
+      {
+        name: "Multi-Tenant Backend",
+      },
+    ],
     image: dashboard,
-    source_code_link: "https://public.tableau.com/app/profile/krishna.preetham.bhavirisetty/viz/MarketSales2016-2019/Dashboard1",
-  },
-  
-  {
-    name: "Task Management",
-    description:
-      "Engineered a To-Do list application using Vue.js, emphasizing real-time responsiveness and a user-friendly interface.Integrated the frontend with a robust Django RESTful API, facilitating  task management operations.Implemented features like task addition, monitoring, and removal, enhancing user productivity and providing a streamlined task-tracking experience.",
-    tags: [
-      {
-        name: "Vuejs",
-      },
-      {
-        name: "RESTful Api",
-      },
-    ],
-    image: todo,
-    source_code_link: "https://github.com/Preethambhavirisetty/Task_management.git",
-  },
-  {
-    name: "Real-Time Route Planner",
-    description:
-    "Designed and developed a real-time route visualization website with a Python backend and ReactJS frontend, leveraging RESTful APIs for seamless integration between services. Implemented efficient route calculation algorithms and interactive map features, enabling users to visualize and optimize routes dynamically. Focused on delivering a responsive user experience, scalable architecture, and clean, maintainable code for long-term functionality." ,   
-    tags: [
-      {
-        name: "Reactjs",
-      },
-      {
-        name: "Python",
-      },
-    ],
-    image: georoute,
-    source_code_link: "https://github.com/Preethambhavirisetty/Geospatial-Visualization-and-Shortest-Path-Optimization",
+    source_code_link: "http://3.235.31.140/",
   },
 ];
 
