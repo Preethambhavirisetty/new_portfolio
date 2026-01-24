@@ -48,6 +48,7 @@ import georoute from "./georoute.png";
 import dashboard from "./dashboard.png";
 
 import todo from "./todo.png";
+import fallbackImage from "./fallback.jpg";
 
 export {
   logonav,
@@ -96,4 +97,5 @@ export {
   dashboard,
   
   todo,
+  fallbackImage,
 };

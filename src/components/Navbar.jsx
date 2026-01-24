@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
+import { theme, cn } from "../theme";
 import { navLinks } from "../constants";
-import { logonav, menu, close } from "../assets";
+import { menu, close } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -29,33 +30,31 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-white" : "bg-transparent"
+      } w-full flex items-center py-4 sm:py-5 fixed top-0 z-20 transition-all duration-300 ${
+        scrolled ? cn(theme.backgrounds.navbar, theme.shadows.sm, theme.borders.default, "border-b") : theme.backgrounds.navbar
       }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
           to='/'
-          className='flex items-center gap-2'
+          className='flex items-center'
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logonav} alt='logonav' className='w-11 h-11 object-contain' />
-          <p className={`${scrolled ? "text-black" : "text-black"} text-[18px] font-bold cursor-pointer flex `}>
-            Bhavirisetty&nbsp;
-            <span className='sm:block hidden'>|  Preetham</span>
+          <p className={cn(theme.textColors.primary, theme.fontSizes.navLogo, theme.fontWeights.semibold, "cursor-pointer tracking-wide leading-relaxed")}>
+            Tejaswi Raavi
           </p>
         </Link>
 
-        <ul className='list-none hidden sm:flex flex-row gap-10'>
+        <ul className={cn("list-none hidden sm:flex flex-row", theme.gaps.lg)}>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-black" : "text-black"
-              } hover:text-[#facc15] text-[18px] font-medium cursor-pointer`}
+                active === nav.title ? "text-black-100 border-b-2 border-black-100" : "text-black-100/80"
+              } hover:text-black-100 pb-1", theme.fontSizes.nav, theme.fontWeights.medium, "cursor-pointer transition-all duration-300 border-b-2 border-transparent`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -72,17 +71,26 @@ const Navbar = () => {
           />
 
           <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className={cn(
+              !toggle ? "hidden" : "flex",
+              "flex-col",
+              theme.padding.cardLg,
+              theme.backgrounds.navbar,
+              theme.borders.strong,
+              theme.shadows.card,
+              "absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl"
+            )}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className={cn("list-none flex flex-col items-start flex-1", theme.gaps.xs)}>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
+                  className={cn(
+                    theme.fontWeights.medium,
+                    "cursor-pointer",
+                    theme.fontSizes.body,
+                    active === nav.title ? cn(theme.textColors.primary, "underline") : theme.textColors.primary
+                  )}
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(nav.title);

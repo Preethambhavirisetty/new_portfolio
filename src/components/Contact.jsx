@@ -1,253 +1,148 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
-import { bye } from "../assets";
+import { slideIn, textVariant, fadeIn } from "../utils/motion";
+import { theme, cn } from "../theme";
 
-// template_c11294f
-// service_mbv90dk
-// K1YIsgzpDz6AhT_Ik
-const ContactHead = () => <h3 className={styles.sectionHeadText}>Contact.</h3>;
-const EmailDiv = () => {
-  return (
-    <div
-        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg bg-[#facc15] cursor-pointer hover:opacity-80"
-        onClick={() => navigator.clipboard.writeText("kbhavir1@binghamton.edu")}
-      >
-        <span className="text-gray-800">
-          <i class="fa fa-copy"></i>
-        </span>
-        <span>Copy Email</span>
-      </div>
-  )
-}
-const NumberDiv = () => {
-  return (
-    <div
-        className="w-36 flex justify-center items-center space-x-3 p-2 rounded-lg border-2 border-[#facc15] cursor-pointer hover:text-[#a79036]"
-        onClick={() => navigator.clipboard.writeText("+17168089656")}
-      >
-        <span className="text-gray-800">
-          <i class="fa fa-copy"></i>
-        </span>
-        <span>Copy Number</span>
-      </div>
-  )
-}
-const LinkedinDiv = () => {
-  return (
-    <div className="flex items-center space-x-3">
-        <span className="text-blue-500">
-          <i class="fa fa-linkedin text-xl"></i>
-        </span>
-        <a
-          href="https://www.linkedin.com/in/preetham2001/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-700 hover:opacity-80 text-lg"
-        >
-          LinkedIn
-        </a>
-      </div>
-  )
-}
-const GithubDiv = () => {
-  return (
-    <div className="flex items-center space-x-3">
-        <span className="text-gray-800">
-          <i class="text-xl fa fa-github"></i>
-        </span>
-        <a
-          href="https://github.com/Preethambhavirisetty"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-700 hover:opacity-80 text-lg"
-        >
-          GitHub
-        </a>
-      </div>
-  )
-}
-const HomeDiv = () => {
-  return (
-    <div className="flex items-center space-x-3">
-        <span className="text-blue-800">
-          <i className="fa fa-map-marker text-xl"></i>
-        </span>
-        <span className="text-xl text-gray-700">Salt Lake City, Utah</span>
-      </div>
-  )
-}
 
-const Copyright = ({ }) => {
-  return (
-    <div className="absolute bottom-0 text-sm font-light">Made with <i className="text-red-600 fa fa-heart"></i> #BetterJobs</div>
-  )
-}
+const ContactInfoCard = ({ icon, label, value, href, onClick, isButton = false }) => {
+  const content = (
+    <div className={cn("flex items-center gap-3", theme.padding.card, theme.backgrounds.cardAlt, theme.borders.medium, "rounded-xl hover:bg-white/90 hover:shadow-lg transition-all duration-300 group", isButton ? 'cursor-pointer' : '')} onClick={onClick}>
+      <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-black-100/5 rounded-lg group-hover:bg-black-100/10 transition-colors">
+        <i className={cn(icon, theme.textColors.primary, theme.fontSizes.body)}></i>
+      </div>
+      <div className="flex-1 text-left min-w-0">
+        <p className={cn(theme.textColors.muted, theme.fontSizes.small, theme.fontWeights.light, "mb-1")}>{label}</p>
+        <p className={cn(theme.textColors.primary, theme.fontSizes.bodySm, theme.fontWeights.medium, "truncate")}>{value}</p>
+      </div>
+      {isButton && (
+        <i className={cn("fa fa-copy", theme.textColors.light, "group-hover:text-black-100 transition-colors flex-shrink-0")}></i>
+      )}
+    </div>
+  );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
+};
+
+const SocialLink = ({ icon, label, href, color = "text-black-100" }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={cn("flex items-center gap-4", theme.padding.cardMd, theme.backgrounds.cardAlt, theme.borders.medium, "rounded-xl hover:bg-white/90 hover:border-black-100/30 hover:shadow-lg transition-all duration-300 group")}
+  >
+    <div className={`w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-lg bg-black-100/5 group-hover:bg-black-100/10 transition-colors`}>
+      <i className={`${icon} ${color} text-lg lg:text-xl`}></i>
+    </div>
+    <span className={cn(theme.textColors.primary, theme.fontSizes.bodyLg, theme.fontWeights.medium)}>{label}</span>
+    <i className={cn("fa fa-external-link", theme.textColors.light, theme.fontSizes.small, "ml-auto")}></i>
+  </a>
+);
 
 const Contact = () => {
+  const copyToClipboard = (text, type) => {
+    navigator.clipboard.writeText(text);
+    // You can add a toast notification here if needed
+  };
 
   return (
-    <div className="w-full h-full text-center">
-      <ContactHead />
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden h-full`}
-    >
-    <motion.div
-      variants={slideIn("left", "tween", 0.2, 1)}
-      className='relative flex-[0.75] bg-gradient-to-bl from-gray-50 via-gray-50 to-gray-200 p-8 rounded-2xl h-96 flex flex-col justify-center items-center gap-3 shadow-md'
-    >
-    
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-row gap-1">
-            <div className="flex flex-col justify-end gap-1">
-                <HomeDiv/>
-                <LinkedinDiv/>
-                <GithubDiv/>
-            </div>
-            <div className="flex flex-row gap-3"> 
-              <img width="150" height="150" src={bye} />
-            </div>
-          </div>
-          <div className="flex flex-row gap-3">
-            <EmailDiv/>
-            <NumberDiv/>
-          </div>
+    <div className="">
+      <div className={cn(theme.sectionHeader)} variants={textVariant()}>
+        <h2 className={cn(theme.sectionHeading, "text-center")}>
+          Contact
+        </h2>
+        {/* Underline */}
+        <div className={theme.underline} />
       </div>
 
-  
-      
-          <Copyright />
-  
-      
-    </motion.div>
-        
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[400px]'
-        >
-        <EarthCanvas />
-      </motion.div>
+      <div 
+        className="w-full flex justify-center"
+        variants={fadeIn("", "", 0.1, 1)}
+      >
+        <p className={cn(theme.margins.sectionDescription, theme.descriptionText)}>
+          Let's connect and discuss how we can work together.
+        </p>
+      </div>
+
+      <div className={cn("mt-5", theme.containerWidths.section, "mx-auto relative", theme.padding.section)}>
+        {/* Subtle Background */}
+        <div className="absolute inset-0 bg-black-100/2 rounded-3xl blur-3xl"></div>
+        <div className="relative w-full bg-white/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border-t border-black-100/20 border-x border-b border-black-100/10 shadow-lg">
+          <motion.div
+            // variants={slideIn("up", "tween", 0.2, 1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className={cn("grid grid-cols-1 md:grid-cols-3", theme.gaps.sm, "mb-2")}>
+              <ContactInfoCard
+                icon="fa fa-envelope"
+                label="Email"
+                value="tejaswir2468@gmail.com"
+                onClick={() => copyToClipboard("tejaswir2468@gmail.com", "email")}
+                isButton={true}
+              />
+              
+              <ContactInfoCard
+                icon="fa fa-phone"
+                label="Phone"
+                value="+1 (832) 469-7808"
+                onClick={() => copyToClipboard("+18324697808", "phone")}
+                isButton={true}
+              />
+              
+              <ContactInfoCard
+                icon="fa fa-map-marker"
+                label="Location"
+                value="Naperville, IL"
+              />
+            </div>
+
+            <div className={cn("pt-6", theme.borders.strong, "border-t")}>
+              <p className={cn(theme.textColors.tertiary, theme.fontSizes.bodySm, theme.fontWeights.medium, "mb-5 text-center tracking-wide")}>Connect with me</p>
+              <div className={cn("flex flex-col sm:flex-row justify-center", theme.gaps.xs)}>
+                <SocialLink
+                  icon="fa fa-linkedin"
+                  label="LinkedIn"
+                  href="https://www.linkedin.com/in/tejaswiraavi"
+                  color="text-blue-600"
+                />
+                <SocialLink
+                  icon="fa fa-github"
+                  label="GitHub"
+                  href="https://github.com"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4 }}
+        className={cn("text-center", theme.margins.sectionContent, "pt-8", theme.borders.default, "border-t pb-2")}
+      >
+        <p className={cn(theme.textColors.light, theme.fontSizes.smallLg, theme.fontWeights.light, "tracking-wide")}>
+          © 2024 Tejaswi Raavi. All rights reserved.
+        </p>
+      </div>
     </div>
-          </div>
   );
 };
 
 export default SectionWrapper(Contact, "contact");
-
-{/* <motion.div className="bg-gradient-to-tr from-gray-50 via-gray-100 to-gray-300 p-6 rounded-lg shadow-lg w-96 mx-auto"> */}
-/*
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    console.log(form, "email");
-    emailjs
-      .send(
-        'service_mbv90dk',
-        'template_c11294f',
-        {
-          from_name: form.name,
-          to_name: "Preetham Bhavirisetty",
-          from_email: form.email,
-          to_email: "preethamk.967@gmail.com",
-          message: form.message,
-        },
-        'K1YIsgzpDz6AhT_Ik'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
-  };
-  */
-{/* <motion.div
-  variants={slideIn("left", "tween", 0.2, 1)}
-  className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
->
-  <p className={styles.sectionSubText}>Get in touch</p>
-  <h3 className={styles.sectionHeadText}>Contact.</h3>
-
-  <form
-    ref={formRef}
-    onSubmit={handleSubmit}
-    className='mt-12 flex flex-col gap-8'
-  >
-    <label className='flex flex-col'>
-      <span className='text-white font-medium mb-4'>Your Name</span>
-      <input
-        type='text'
-        name='name'
-        value={form.name}
-        onChange={handleChange}
-        placeholder="What's your name?"
-        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-      />
-    </label>
-    <label className='flex flex-col'>
-      <span className='text-white font-medium mb-4'>Your email</span>
-      <input
-        type='email'
-        name='email'
-        value={form.email}
-        onChange={handleChange}
-        placeholder="What's your Email?"
-        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-      />
-    </label>
-    <label className='flex flex-col'>
-      <span className='text-white font-medium mb-4'>Your Message</span>
-      <textarea
-        rows={7}
-        name='message'
-        value={form.message}
-        onChange={handleChange}
-        placeholder='What you want to say?'
-        className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-      />
-    </label>
-
-    <button
-      type='submit'
-      className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-    >
-      {loading ? "Sending..." : "Send"}
-    </button>
-  </form>
-</motion.div> */}

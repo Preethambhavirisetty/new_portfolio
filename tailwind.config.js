@@ -5,12 +5,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        primary: "#FEF9E7",        // Light cream/yellow background
+        secondary: "#000000",      // Black text
+        tertiary: "#F5F5DC",       // Light cream
+        "black-100": "#000000",    // Pure black
+        "black-200": "#1A1A1A",    // Dark black
+        "white-100": "#FFFFFF",    // White
+        "cream-light": "#FEF9E7",   // Light cream/yellow
+        "cream-medium": "#F5F5DC",  // Medium cream
+        "cream-dark": "#E8E8D3",    // Darker cream
+        "brown-dark": "#5D4E37",    // Dark brown accent
+        "gray-light": "#E5E5E5",     // Light gray
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
