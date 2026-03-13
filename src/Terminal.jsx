@@ -4,6 +4,7 @@ import { experiences, projects } from './constants';
 import PreethamBhavirisettyResume from './assets/PreethamBhavirisetty.pdf';
 
 const Terminal = () => {
+  const [theme, setTheme] = useState(() => localStorage.getItem('terminal-theme') || 'dark');
   const [commandHistory, setCommandHistory] = useState([
     { type: 'output', content: '╔═══════════════════════════════════════════════════════════════════════════════╗' },
     { type: 'output', content: '║                                                                               ║' },
@@ -26,6 +27,12 @@ const Terminal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem('terminal-theme', nextTheme);
+  };
 
   const generateAsciiProgressBar = (progress) => {
     const barLength = 50;
@@ -480,8 +487,21 @@ const Terminal = () => {
   }, []);
 
   return (
-    <div className="terminal-window-wrapper">
+    <div className="terminal-window-wrapper" data-theme={theme}>
       <div className="terminal-window">
+        <div className="terminal-header">
+          <div className="terminal-buttons">
+            <span className="terminal-button close" />
+            <span className="terminal-button minimize" />
+            <span className="terminal-button maximize" />
+          </div>
+          <div className="terminal-title">preetham@portfolio:~</div>
+          <div className="terminal-header-actions">
+            <button type="button" className="theme-toggle" onClick={toggleTheme}>
+              {theme === 'dark' ? 'Light' : 'Dark'}
+            </button>
+          </div>
+        </div>
         {/* Terminal Container */}
         <div className="terminal-container">
           <div className="terminal-body" ref={terminalRef}>
@@ -576,4 +596,3 @@ const Terminal = () => {
 };
 
 export default Terminal;
-
