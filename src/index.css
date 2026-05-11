@@ -809,3 +809,167 @@ body {
     font-size: 9px;
   }
 }
+
+/* ── Quick-Access Command Panel ── */
+.quick-command-panel {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 16px;
+  border-top: 1px solid var(--terminal-border);
+  background: var(--terminal-surface);
+}
+
+.quick-command-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid var(--terminal-border);
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.quick-command-chip:hover:not(:disabled) {
+  border-color: var(--command);
+  color: var(--command);
+  background: rgba(88, 166, 255, 0.08);
+}
+
+[data-theme="light"] .quick-command-chip:hover:not(:disabled) {
+  background: rgba(11, 87, 208, 0.08);
+}
+
+.quick-command-chip:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.chip-dollar {
+  color: var(--user);
+  font-weight: 600;
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .quick-command-panel {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+  .quick-command-chip {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-command-chip {
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+}
+
+/* ── Copy-to-Clipboard ── */
+.copyable-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--terminal-border);
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+
+.copy-btn:hover {
+  border-color: var(--command);
+  color: var(--command);
+}
+
+.copy-btn--copied {
+  border-color: var(--user);
+  color: var(--user);
+  animation: copied-flash 0.2s ease;
+}
+
+@keyframes copied-flash {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* ── Idle Hint ── */
+.idle-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 4px;
+  padding: 6px 12px;
+  border: 1px solid var(--command);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 13px;
+  background: rgba(88, 166, 255, 0.06);
+  animation: hint-glow 2s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .idle-hint {
+  background: rgba(11, 87, 208, 0.06);
+}
+
+.idle-hint-cmd {
+  color: var(--command);
+  font-weight: 600;
+}
+
+@keyframes hint-glow {
+  from { box-shadow: 0 0 4px rgba(88, 166, 255, 0.3); }
+  to   { box-shadow: 0 0 12px rgba(88, 166, 255, 0.6); }
+}
+
+/* ── Matrix Overlay ── */
+.matrix-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: #000;
+  cursor: pointer;
+}
+
+.matrix-overlay canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.matrix-exit-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00ff41;
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 13px;
+  opacity: 0.7;
+  animation: blink 1.5s infinite;
+  pointer-events: none;
+  white-space: nowrap;
+}
