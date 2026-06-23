@@ -1,39 +1,30 @@
-import Navbar from "./components/Navbar";
+import { useRef } from "react";
 import Hero from "./components/Hero";
-import LatestHighlight from "./components/LatestHighlight";
-import FunShowcase from "./components/FunShowcase";
-import About from "./components/About";
-import PullQuote from "./components/PullQuote";
-import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import SectionNav from "./components/SectionNav";
+import useActiveSection from "./hooks/useActiveSection";
+
+const SECTIONS = ["Home", "Work", "Contact"];
 
 const App = () => {
+  const heroRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+  const sectionRefs = [heroRef, projectsRef, contactRef];
+
+  const activeIndex = useActiveSection(sectionRefs);
+
+  const handleNavigate = (index) => {
+    sectionRefs[index].current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="min-h-screen bg-cream text-ink font-body selection:bg-ink selection:text-cream">
-      <Navbar />
-      <main>
-        <section id="home">
-          <Hero />
-        </section>
-        <LatestHighlight />
-        <FunShowcase />
-        <section id="about">
-          <About />
-        </section>
-        <PullQuote />
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
-      </main>
-      <Footer />
+    <div className="scroll-container">
+      <SectionNav sections={SECTIONS} activeIndex={activeIndex} onNavigate={handleNavigate} />
+      <Hero ref={heroRef} />
+      <Projects ref={projectsRef} />
+      <Contact ref={contactRef} />
     </div>
   );
 };

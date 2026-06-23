@@ -5,24 +5,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
-
-        cream: "#F8F7F3",
-        panel: "#EFECE5",
-        blush: "#F7DCE0",
-        sage: "#DCE8DC",
-        butter: "#FCEFC7",
-        sky: "#DCEAF7",
-        ink: "#181612",
-        charcoal: "#1A1A18",
-        muted: "#7A746A",
-        accent: "#2449F2",
-        teal: "#1F4E45",
+        cream: "#F5F5F5",
+        sunset: "#FE7F2D",
+        deep: "#233D4D",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
@@ -31,9 +16,9 @@ module.exports = {
         'colorful': '0px 4px 10px rgba(33, 30, 53, 0.15), 0px 4px 20px rgba(145, 92, 182, 0.2)', // Gradient shadow
       },
       fontFamily: {
-        display: ["Cormorant Garamond", "Fraunces", "serif"],
-        body: ["Inter", "ui-sans-serif", "system-ui"],
-        cursive: ["Caveat", "cursive"],
+        display: ["Clash Display", "sans-serif"],
+        body: ["General Sans", "ui-sans-serif", "system-ui"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       screens: {
         xs: "450px",
