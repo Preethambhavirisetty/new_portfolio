@@ -58,61 +58,61 @@ const Contact = forwardRef((_, ref) => {
   return (
     <section
       ref={ref}
-      className="scroll-section grid-texture relative flex w-full flex-col items-center justify-center overflow-hidden bg-cream px-6 sm:px-12"
+      className="scroll-section brutal-surface relative flex w-full flex-col overflow-hidden px-4 py-4 text-black sm:px-6"
     >
-      <div
-        aria-hidden
-        className="gradient-blob gradient-blob-a left-1/2 top-0 h-[26rem] w-[26rem] -translate-x-1/2 bg-gradient-to-b from-sunset/30 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="gradient-blob gradient-blob-b -bottom-24 -right-20 h-[22rem] w-[22rem] bg-gradient-to-tl from-deep/25 to-sunset/15"
-      />
-      <div
-        aria-hidden
-        className="gradient-blob gradient-blob-c -bottom-16 -left-16 h-72 w-72 bg-gradient-to-tr from-sunset/15 to-deep/20 opacity-70"
-      />
-
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center text-center"
+        className="scroll-area relative z-10 mx-auto grid min-h-0 w-full flex-1 overflow-y-auto border border-black bg-[#f2f1ee] lg:grid-cols-[1fr_1.2fr]"
       >
-        <p className="font-mono text-sm text-sunset">
-          <span className="text-deep/40">$</span> contact --open
-        </p>
-        <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-deep sm:text-6xl">
-          Let&apos;s build
-          <span className="bg-gradient-to-r from-sunset to-deep bg-clip-text text-transparent">
-            {" "}
-            something
-          </span>
-        </h2>
+        <div className="relative flex min-h-[22rem] flex-col justify-between border-b border-black p-5 sm:p-8 lg:border-b-0 lg:border-r">
+          <div>
+            <p className="font-mono text-[10px] uppercase sm:text-xs">Contact / availability</p>
+            <h2 className="dot-title mt-6 max-w-[11ch] font-mono text-5xl font-semibold uppercase leading-none sm:text-7xl lg:text-8xl">
+              Build Next.
+            </h2>
+          </div>
+          <p className="max-w-md text-base leading-relaxed text-black/70 sm:text-lg">
+            Open to AI engineering, backend platform, and forward-deployed product work where the system has to survive contact with production.
+          </p>
+          <div aria-hidden className="noise-mask absolute bottom-8 right-8 h-44 w-44 opacity-80" />
+        </div>
 
-        <div className="mt-10 grid w-full gap-4 sm:grid-cols-2">
+        <div className="grid content-stretch sm:grid-cols-2">
           {LINKS.map((item) => (
             <a
               key={item.label}
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
-              className="group flex min-w-0 items-center gap-4 rounded-2xl border border-deep/10 bg-deep/[0.03] p-5 text-left backdrop-blur-sm transition-colors hover:border-sunset/50"
+              className="group flex min-h-[10rem] min-w-0 items-center gap-4 border-b border-black p-5 text-left transition-colors hover:bg-black hover:text-[#f2f1ee] sm:border-r sm:even:border-r-0 lg:min-h-0"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-deep/15 text-deep transition-colors group-hover:border-sunset group-hover:text-sunset">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-current">
                 <svg width="18" height="18" viewBox="0 0 24 24">
                   {ICONS[item.label]}
                 </svg>
               </span>
               <span className="min-w-0 flex-1">
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-deep/40">
+                <p className="font-mono text-[11px] uppercase text-black/50 group-hover:text-[#f2f1ee]/55">
                   {item.label}
                 </p>
-                <p className="mt-1 break-all font-body text-deep">{item.value}</p>
+                <p className="mt-2 break-all text-base font-semibold">{item.value}</p>
               </span>
             </a>
           ))}
+          <div className="flex min-h-[10rem] flex-col justify-between border-b border-black p-5 sm:border-r lg:min-h-0">
+            <p className="font-mono text-[11px] uppercase text-black/50">Signal</p>
+            <p className="text-2xl font-semibold leading-tight">AI/ML Engineer in New York</p>
+          </div>
+          <a
+            href={`mailto:${contactInfo.email}`}
+            className="flex min-h-[10rem] items-end justify-between border-b border-black bg-black p-5 text-[#f2f1ee] transition-colors hover:bg-[#f2f1ee] hover:text-black lg:min-h-0"
+          >
+            <span className="font-mono text-xs uppercase">Start a thread</span>
+            <span className="text-4xl leading-none">↗</span>
+          </a>
         </div>
       </motion.div>
     </section>

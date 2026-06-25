@@ -1,10 +1,12 @@
 import notelite from "../assets/portss.png";
 import finance from "../assets/dashboard.png";
+import resumePdf from "../assets/PreethamBhavirisetty.pdf";
 
 export const profile = {
   name: "Preetham",
-  tagline: "Selected Engineering Work, vol. 1",
-  range: "for 2022 — 2026",
+  fullName: "Preetham Bhavirisetty",
+  tagline: "Backend systems. AI products. Production delivery.",
+  range: "selected work / 2020-2026",
   position: "AI/ML Engineer",
   experience: "4+ years",
   company: "Aetna (CVS Health)",
@@ -19,13 +21,16 @@ export const profile = {
     latitude: 40.7128,
     longitude: -74.006,
   },
+  resume: resumePdf,
   heroSummary:
-    "I build and ship backend & cloud-native platforms — currently leading delivery for a healthcare conversational AI platform at Aetna (CVS Health).",
+    "I build cloud-native software and AI systems for real users, with a bias toward reliable backends, clean deployment paths, and measurable production outcomes.",
 };
 
 export const metrics = [
   { value: "4+", label: "years shipping" },
-  { value: "3", label: "companies" },
+  { value: "10K+", label: "daily transactions" },
+  { value: "50%", label: "deployment effort cut" },
+  { value: "40%", label: "processing time cut" },
 ];
 
 export const stack = [
@@ -60,6 +65,12 @@ export const projects = [
     image: finance,
     link: "http://3.235.31.140/",
   },
+];
+
+export const highlights = [
+  "Customer-facing delivery for a healthcare conversational AI platform across chat, SMS, and voice.",
+  "RAG search with LangChain and OpenSearch for large-scale internal knowledge retrieval.",
+  "Event-driven credit automation using Spring Boot, FastAPI, Kafka, Redis Streams, and embedded ML scoring.",
 ];
 
 export const experience = [

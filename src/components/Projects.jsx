@@ -1,49 +1,53 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { projects } from "../constants";
+import { experience, projects } from "../constants";
 
 const Projects = forwardRef((_, ref) => {
   return (
     <section
       ref={ref}
-      className="scroll-section grid-texture relative flex w-full flex-col overflow-hidden bg-cream px-6 py-16 sm:px-12 lg:px-20"
+      className="scroll-section brutal-surface relative flex w-full flex-col overflow-hidden px-4 py-4 text-black sm:px-6"
     >
-      <div
-        aria-hidden
-        className="gradient-blob gradient-blob-b -right-32 top-0 h-[28rem] w-[28rem] bg-gradient-to-bl from-sunset/25 to-deep/15"
-      />
-      <div
-        aria-hidden
-        className="gradient-blob gradient-blob-c -bottom-32 -left-24 h-[26rem] w-[26rem] bg-gradient-to-tr from-deep/20 to-sunset/15"
-      />
-      <div
-        aria-hidden
-        className="gradient-blob gradient-blob-a left-1/3 top-1/2 h-64 w-64 bg-gradient-to-br from-sunset/15 to-deep/15 opacity-60"
-      />
-
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-5xl flex-col">
-        <div className="shrink-0">
+      <div className="relative z-10 mx-auto flex min-h-0 w-full flex-1 flex-col border border-black bg-[#f2f1ee]">
+        <div className="grid shrink-0 border-b border-black lg:grid-cols-[1fr_1.2fr]">
+          <div className="border-b border-black p-5 sm:p-7 lg:border-b-0 lg:border-r">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="font-mono text-sm text-sunset"
+              className="font-mono text-[10px] uppercase sm:text-xs"
           >
-            <span className="text-deep/40">~/work $</span> ls
+              Work / shipped systems
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-3 font-display text-4xl font-medium text-deep sm:text-6xl"
+              className="dot-title mt-4 max-w-[12ch] font-mono text-5xl font-semibold uppercase leading-none sm:text-7xl"
           >
-            Selected work
+              Selected Work
           </motion.h2>
+          </div>
+          <div className="grid sm:grid-cols-3">
+            {experience.map((role, index) => (
+              <div
+                key={role.company}
+                className="border-b border-black p-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+              >
+                <p className="font-mono text-xs">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="mt-4 text-lg font-semibold leading-tight">{role.company}</h3>
+                <p className="mt-1 font-mono text-[10px] uppercase text-black/55 sm:text-xs">
+                  {role.period}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-black/70">{role.summary}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="scroll-area mt-10 min-h-0 flex-1 overflow-y-auto pr-1">
-          <div className="grid gap-6 pb-2 sm:grid-cols-2">
+        <div className="scroll-area min-h-0 flex-1 overflow-y-auto">
+          <div className="grid lg:grid-cols-2">
             {projects.map((project, index) => (
               <motion.a
                 key={project.name}
@@ -54,15 +58,15 @@ const Projects = forwardRef((_, ref) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-deep/10 bg-deep/[0.03] backdrop-blur-sm transition-colors hover:border-sunset/50"
+                className="group grid min-h-[28rem] border-b border-black bg-[#f2f1ee] transition-colors hover:bg-black hover:text-[#f2f1ee] lg:border-r lg:even:border-r-0"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative min-h-52 overflow-hidden border-b border-black bg-white">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-52"
+                    className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
                   />
-                  <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-cream/80 text-deep transition-colors group-hover:bg-sunset group-hover:text-cream">
+                  <span className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center border border-black bg-[#f2f1ee] text-black transition-colors group-hover:bg-black group-hover:text-[#f2f1ee]">
                     <svg
                       width="14"
                       height="14"
@@ -79,21 +83,21 @@ const Projects = forwardRef((_, ref) => {
                     </svg>
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <p className="font-mono text-xs text-sunset">
-                    {String(index + 1).padStart(2, "0")} // {project.eyebrow}
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <p className="font-mono text-xs uppercase">
+                    Case {String(index + 1).padStart(2, "0")} / {project.eyebrow}
                   </p>
-                  <h3 className="mt-2 font-display text-xl font-medium text-deep group-hover:text-sunset">
+                  <h3 className="mt-4 text-3xl font-semibold leading-none sm:text-4xl">
                     {project.name}
                   </h3>
-                  <p className="mt-3 font-body text-sm leading-relaxed text-deep/70">
+                  <p className="mt-5 text-sm leading-relaxed text-black/70 group-hover:text-[#f2f1ee]/75">
                     {project.description}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-auto flex flex-wrap gap-2 pt-8">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md border border-deep/10 px-2.5 py-1 font-mono text-[11px] text-deep/50"
+                        className="border border-current px-2.5 py-1 font-mono text-[11px] uppercase"
                       >
                         {tag}
                       </span>

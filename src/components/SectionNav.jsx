@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
+
 const SectionNav = ({ sections, activeIndex, onNavigate }) => {
   return (
     <nav
       aria-label="Section navigation"
-      className="fixed right-5 top-1/2 z-50 flex -translate-y-1/2 flex-col items-end gap-4 sm:right-8"
+      className="fixed right-3 top-1/2 z-50 flex -translate-y-1/2 flex-col items-end gap-3 sm:right-5"
     >
       {sections.map((label, index) => {
         const isActive = index === activeIndex;
@@ -14,15 +16,15 @@ const SectionNav = ({ sections, activeIndex, onNavigate }) => {
             className="group flex items-center gap-3"
           >
             <span
-              className={`font-mono text-[11px] uppercase tracking-[0.2em] transition-opacity ${
-                isActive ? "opacity-100 text-deep" : "opacity-0 group-hover:opacity-60 text-deep"
+              className={`hidden border border-black bg-[#f2f1ee] px-2 py-1 font-mono text-[10px] uppercase transition-opacity sm:block ${
+                isActive ? "opacity-100 text-black" : "opacity-0 text-black group-hover:opacity-100"
               }`}
             >
               {label}
             </span>
             <span
-              className={`font-mono text-[11px] transition-colors ${
-                isActive ? "text-sunset" : "text-deep/30 group-hover:text-deep/60"
+              className={`flex h-8 w-8 items-center justify-center border border-black font-mono text-[10px] transition-colors ${
+                isActive ? "bg-black text-[#f2f1ee]" : "bg-[#f2f1ee] text-black group-hover:bg-black group-hover:text-[#f2f1ee]"
               }`}
             >
               {String(index + 1).padStart(2, "0")}
