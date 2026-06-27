@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { highlights, metrics, profile, stack } from "../constants";
+import { heroSkills, highlights, metrics, profile } from "../constants";
 
 const Hero = forwardRef((_, ref) => {
   return (
@@ -36,28 +36,32 @@ const Hero = forwardRef((_, ref) => {
               <span className="hairline w-16" />
               <span className="h-2 w-2 rounded-full bg-black" />
             </div>
-            <h1 className="dot-title mt-8 max-w-[10ch] font-mono text-[3.5rem] font-semibold uppercase leading-none sm:text-[6.4rem] lg:text-[7.5rem]">
+            <h1 className="mt-8 max-w-[10ch] font-mono text-[3.5rem] font-semibold uppercase leading-none text-black sm:text-[6.4rem] lg:text-[7.5rem]">
               {profile.name}
             </h1>
           </div>
 
-          <div className="relative order-3 flex min-h-[13rem] items-center justify-center border-b border-black p-6 lg:order-none lg:min-h-0 lg:border-b-0 lg:border-r">
+          <div className="relative flex min-h-[13rem] items-center justify-center border-b border-black p-6 lg:min-h-0 lg:border-b-0 lg:border-r">
             <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-black/20 lg:block" />
             <div className="hard-shadow relative flex h-40 w-40 items-center justify-center border border-black bg-[#f2f1ee] sm:h-52 sm:w-52">
-              <div className="grid h-24 w-24 grid-cols-3 grid-rows-3 gap-1 sm:h-32 sm:w-32">
-                {Array.from({ length: 9 }).map((_, index) => (
-                  <span
-                    key={index}
-                    className={index === 4 ? "bg-[#f2f1ee]" : "bg-black"}
-                  />
-                ))}
-              </div>
+              <span
+                aria-hidden
+                className="select-none font-mono text-5xl leading-none text-black grayscale sm:text-7xl"
+              >
+                👾
+              </span>
             </div>
             <span className="edge-label absolute left-4 top-4 font-mono text-[10px] uppercase sm:text-xs">
               AI
             </span>
-            <span className="edge-label absolute bottom-4 right-4 font-mono text-[10px] uppercase sm:text-xs">
+            <span className="edge-label absolute right-4 top-4 font-mono text-[10px] uppercase sm:text-xs">
               Cloud
+            </span>
+            <span className="edge-label absolute bottom-4 left-4 font-mono text-[10px] uppercase sm:text-xs">
+              Infra
+            </span>
+            <span className="edge-label absolute bottom-4 right-4 font-mono text-[10px] uppercase sm:text-xs">
+              Backend
             </span>
           </div>
 
@@ -67,7 +71,7 @@ const Hero = forwardRef((_, ref) => {
               <span className="hairline w-16" />
               <span className="edge-label">Systems</span>
             </div>
-            <h2 className="dot-title mt-8 max-w-[10ch] self-end text-right font-mono text-[3.1rem] font-semibold uppercase leading-none sm:text-[6rem] lg:text-[7rem]">
+            <h2 className="mt-8 max-w-[10ch] self-end text-right font-mono text-[3.1rem] font-semibold uppercase leading-none text-black sm:text-[6rem] lg:text-[7rem]">
               Build.
             </h2>
           </div>
@@ -79,14 +83,22 @@ const Hero = forwardRef((_, ref) => {
                 {profile.heroSummary}
               </p>
             </div>
-            <div className="grid grid-cols-2 border-b border-black lg:border-b-0 lg:border-r">
-              {metrics.map((metric) => (
+            <div className="grid grid-cols-2 content-start gap-2 border-b border-black p-4 lg:border-b-0 lg:border-r sm:p-5">
+              {/* {metrics.map((metric) => (
                 <div key={metric.label} className="border-r border-black p-4 last:border-r-0 sm:p-5">
                   <p className="font-mono text-2xl font-semibold sm:text-3xl">{metric.value}</p>
                   <p className="mt-2 font-mono text-[10px] uppercase leading-tight text-black/55 sm:text-xs">
                     {metric.label}
                   </p>
                 </div>
+              ))} */}
+              {heroSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="border border-black px-2.5 py-1.5 text-center font-mono text-xs uppercase"
+                >
+                  {skill}
+                </span>
               ))}
             </div>
             <div className="p-5 sm:p-6">
@@ -94,17 +106,25 @@ const Hero = forwardRef((_, ref) => {
               <p className="mt-3 text-2xl font-semibold leading-tight sm:text-3xl">
                 {profile.company}
               </p>
-              <p className="mt-2 font-mono text-xs uppercase text-black/55">{profile.degree}</p>
+              <p className="mt-2 font-mono text-xs uppercase text-black/55">{profile.position}</p>
             </div>
           </div>
 
           <div className="grid min-h-0 lg:col-span-3 lg:grid-cols-[1fr_1.2fr]">
-            <div className="flex flex-wrap content-start gap-2 border-b border-black p-5 sm:p-6 lg:border-b-0 lg:border-r">
-              {stack.map((tech) => (
-                <span key={tech} className="border border-black px-2.5 py-1.5 font-mono text-xs uppercase">
-                  {tech}
-                </span>
-              ))}
+            <div className="flex flex-col justify-center border-b border-black p-5 sm:p-6 lg:border-b-0 lg:border-r">
+              <p className="font-mono text-[10px] uppercase sm:text-xs">Side project</p>
+              <p className="mt-3 text-base leading-relaxed text-black/75 sm:text-lg">
+                Co-founder of{" "}
+                <a
+                  href="https://www.notelite.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline decoration-black/40 hover:decoration-black"
+                >
+                  notelite.org
+                </a>
+                , and currently improving UX based on user feedback.
+              </p>
             </div>
             <div className="grid gap-0 sm:grid-cols-3">
               {highlights.map((item, index) => (

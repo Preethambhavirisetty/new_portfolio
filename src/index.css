@@ -21,14 +21,21 @@ body {
   font-family: "General Sans", ui-sans-serif, system-ui, sans-serif;
   background-color: #f2f1ee;
   color: #070707;
-  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
 }
 
 .scroll-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
   height: 100vh;
   height: 100dvh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
   scrollbar-width: none;
 }
 
@@ -37,8 +44,10 @@ body {
 }
 
 .scroll-section {
+  width: 100vw;
   height: 100vh;
   height: 100dvh;
+  flex-shrink: 0;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -151,6 +160,8 @@ body {
 .scroll-area {
   scrollbar-width: thin;
   scrollbar-color: rgba(7, 7, 7, 0.35) transparent;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .scroll-area::-webkit-scrollbar {
